@@ -242,18 +242,22 @@
 <p>于是我心中的猫猫狗狗一同喧嚷起来，猫说“我也要”，狗说“好喜欢”，我说“那开干！”。</p>
 <p>从一月十六号开始着手搭建到一月二十号终于调试基本满意，我从一个连cmd都不会用的纯种小白蜕变成一个（还是不会用cmd的）对代码稍微有了一点点认知的入门者。虽然和真正玩代码的人相比我还差得远，但能做到现在的程度已经是对以前的我的大超越了&gt;:D</p>
 <p>总之，在此记录下我个人博客搭建的历程作为纪念，也为被我拉下水的朋友们提供微薄的参考，希望你们能比我少踩几个坑🤝<br></br></p>
-<h2 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a><strong>第一天</strong></h2><p>在注意到网站的后缀是github.io之后，我搜索了“用GitHub搭建个人网站”。搭建网站不止有GitHub一种方法，对于一点儿代码也不想接触的人来说，使用<ins>Notion建站</ins>也是个简便的选择<a href="#footnote-1">[1]</a>。</p>
+<h2 id="第一天-选择与搭建"><a href="#第一天-选择与搭建" class="headerlink" title="第一天-选择与搭建"></a><strong>第一天-选择与搭建</strong></h2><p>在注意到网站的后缀是github.io之后，我搜索了“用GitHub搭建个人网站”。搭建网站不止有GitHub一种方法，对于一点儿代码也不想接触的人来说，使用<ins>Notion建站</ins>也是个简便的选择<a href="#footnote-1">[1]</a>。</p>
 <p>使用GitHub建立个人网站，我尝试了三种路径：（1）<a target="_blank" rel="noopener" href="http://t.csdn.cn/V63ok">使用GitHub Pages</a>；（2）<a target="_blank" rel="noopener" href="http://t.csdn.cn/hAhuP">使用Hugo博客+GitHub</a>；（3）使用Hexo博客+GitHub。前两种因为操作比较困难，我半途而废，最终采用了第三种方法。（回过头去看了一眼，Hugo其实也不麻烦，大概率是不熟悉流程+找的教程比较困难所以打了退堂鼓。如果有喜欢的Hugo主题用它也可以。）</p>
 <p>我参考的Hexo教程是：<a target="_blank" rel="noopener" href="http://t.csdn.cn/fO2aK">超详细Hexo博客搭建教程</a>，后来暮流年老师在探索时发现了更详细的教程→<a target="_blank" rel="noopener" href="http://t.csdn.cn/Vka8v">使用 Github Pages 和 Hexo 搭建自己的独立博客【超级详细的小白教程】</a>，基本把涉及到的步骤和问题都写得很清楚，建议按照后一个进行。</p>
 <p><strong>个人经验建议：</strong></p>
 <ol>
-<li>把cmd（就是摁win+R后输入cmd出来的东西）创建一个快捷方式放在触手可及的地方，因为日后用到它的次数还会很多很多；</li>
+<li>把cmd（就是摁<code>win+R</code>后输入<code>cmd</code>出来的东西）创建一个快捷方式放在触手可及的地方，因为日后用到它的次数还会很多很多；</li>
 <li>以防有人像我一样没接触过cmd→<a target="_blank" rel="noopener" href="http://t.csdn.cn/7SvrN">CMD常用命令大全（值得收藏)</a></li>
 <li>准备一个能够编辑代码文件的软件，比如Notepad++或<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">Visual Studio Code</a>；</li>
 <li>涉及到Markdown语法（md文件使用的语法）可以查找→<a target="_blank" rel="noopener" href="https://www.markdownguide.org/getting-started/">Markdown Guide</a>；</li>
-<li>GitHub在排版上可能有所改动，如果遇到与教程不一样的情况善用Ctrl+F查找功能，在改文件时Ctrl+F也很好用；</li>
-<li>★如果想要在发布博客时加入图片，建议将全局config文件中的“post_asset_folder”设置为“true”，这样新建post时source文件夹内会同时新建同名文件夹，将图片放入同名文件夹中，deploy后网页端能正常显示。（参考<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders">Hexo-资源文件夹</a>）</li>
+<li>GitHub在排版上可能有所改动，如果遇到与教程不一样的情况善用<code>Ctrl+F</code>查找功能，在改文件时<code>Ctrl+F</code>也很好用；</li>
+<li>如果想要在发布博客时加入图片，<strong>建议将全局config文件中的<code>post_asset_folder</code>设置为<code>true</code></strong>，这样新建post时source文件夹内会同时新建同名文件夹，将图片放入同名文件夹中，deploy后网页端能正常显示。（参考<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders">Hexo-资源文件夹</a>）</li>
+<li>很管用的通过页面查看源代码的方式：在想查看的地方<strong>右键-检查</strong>，页面右侧会出现一大块代码，“elements”会高亮显示代码对应的网页位置，“styles”能显示查看的位置格式由哪些源代码控制，很方便预览代码改动的效果或回到文件里改动代码。如图：</li>
 </ol>
+<center><img src="https://cdn.jsdelivr.net/gh/acidandsalt/ohsnap/site_1/howtoblog_1.png" width="400" height="600"></center></br>
+
+
 <p><strong>下载的软件汇总：</strong></p>
 <ol>
 <li>Git（<a target="_blank" rel="noopener" href="https://git-scm.com/download/win">网站</a>安装，需要里面的Git Bash执行命令）</li>
@@ -261,29 +265,55 @@
 <li>Node.js（<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">网站</a>安装，用于执行命令等）</li>
 <li>Visual Studio Code（<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">网站</a>安装，用于编辑文件）</li>
 <li>PicGo（后续参考“<a target="_blank" rel="noopener" href="http://t.csdn.cn/pzuze">Github+jsDelivr+PicGo 打造稳定快速、高效免费图床</a>”下载，用于上传博客图片）</li>
+<li>总之出错时跟着各种教程用npm装了很多不明不白的东西……</li>
 </ol>
 <p><strong>注册的账户汇总：</strong></p>
 <ol>
-<li><a target="_blank" rel="noopener" href="https://github.com/">GitHub账号</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/">GitHub账号</a>（用于创建仓库）</li>
+<li><a target="_blank" rel="noopener" href="https://leancloud.cn/dashboard/login.html#/signup">LeanCloud</a>（用于Valine评论系统）</li>
+<li><a target="_blank" rel="noopener" href="https://box.n3ko.co/">NekoBox</a>（非必需；简洁的提问箱网站，读者反馈用）</li>
 </ol>
 </br>
 
-<h2 id="第二天"><a href="#第二天" class="headerlink" title="第二天"></a><strong>第二天</strong></h2><p>在基本的搭建和部署（deploy）完成后，我选择了自己最心水的主题：<a target="_blank" rel="noopener" href="https://aomori.linhong.me/v/chinese/getting-started/intro">Hexo-theme-Aomori</a>。这个主题目前没有变体，除了本身的指导手册以外相关资料也很少，比起更常用的默认主题landscape或NexT主题来讲个性化难度更大，对小白比较不友好。我选择它是因为其排版更符合我个人的喜好。（更多Hexo主题见→<a target="_blank" rel="noopener" href="https://hexo.io/themes/index.html">Theme</a>）</p>
+<h2 id="第二天-主题基本配置"><a href="#第二天-主题基本配置" class="headerlink" title="第二天-主题基本配置"></a><strong>第二天-主题基本配置</strong></h2><p>在基本的搭建和部署（deploy）完成后，我选择了自己最心水的主题：<a target="_blank" rel="noopener" href="https://aomori.linhong.me/v/chinese/getting-started/intro">Hexo-theme-Aomori</a>。这个主题目前没有变体，除了本身的指导手册以外相关资料也很少，比起更常用的默认主题landscape或NexT主题来讲个性化难度更大，对小白比较不友好。我选择它是因为其排版更符合我个人的喜好。（更多Hexo主题见→<a target="_blank" rel="noopener" href="https://hexo.io/themes/index.html">Theme</a>）</p>
 <p>接下来的内容基本全部关于我如何对这一主题进行配置和个性化，对未选择此主题的读者来说参考价值非常有限，各位可以选择性阅读。</p>
+<p>如果你也选择了Aomori这个主题——我会按照我阅读配置手册和进行配置的顺序列出我遇到的问题，请搭配主题指导手册一同阅读。</p>
 <p><strong>Q: 如何对_config.yml文件进行编辑？</strong><br>A: 用记事本、Notepad++或VScode打开文件进行编辑。个人推荐VScode，因为界面更人性化。</p>
-<p><strong>Q: 全局_config.yml文件是指什么？</strong><br>A: 全局文件是指博客根目录（Hexo本体文件夹下一级的站点文件夹）内的文件。</p>
-<p><strong>Q: 头像配置“aomori_logo: /images/avatar.jpg”中images文件夹应该建在何处？</strong><br>A: 在Hexo/“站点文件夹”/themes/aomori/sources内新建images文件夹并放入图片。</p>
-<p><strong>Q: 头部菜单指什么？</strong><br>A: 指页面右上角的“Home”和“Archive”按钮，冒号后的部分是页面对应的文件夹（相对路径，省略了Hexo/“站点文件夹”/source的部分），更改冒号前的部分可以更改显示出来的名称，在之后添加新的行可以增加头部菜单按钮，比如：</p>
+<p><strong>Q: 全局_config.yml文件是指什么？</strong><br>A: 全局文件是指博客根目录（Hexo本体文件夹下一级的站点文件夹）内的config文件。</p>
+<p><strong>Q: 头像配置“aomori_logo: /images/avatar.jpg”中images文件夹应该建在何处？</strong><br>A: 在<code>Hexo\"站点文件夹"\themes\aomori\sources</code>内新建<code>images</code>文件夹并放入图片。</p>
+<p><strong>Q: 头部菜单配置指什么？</strong><br>A: 指页面右上角的“Home”和“Archive”按钮。冒号后的部分是页面对应的文件夹（相对路径，省略了<code>Hexo\"站点文件夹"\source</code>的部分），更改冒号前的部分可以更改显示出来的名称，在之后添加新的行可以增加头部菜单按钮，比如：</p>
 <pre><code>aomori_menu:
     🏠首页: /
     📚归档: /archives
     💙关于: /about
 </code></pre>
-<p>**Q:<br>A: </p>
-<p>**Q:<br>A: </p>
-<p>**Q:<br>A: </p>
+<p><strong>Q: 社交媒体配置指什么？</strong><br>A: 社交媒体配置后的外观如<a target="_blank" rel="noopener" href="https://linhong.me/">demo站点</a>右上角图标所示。</p>
+<h5>我不打算启用该模块，后在配置时发现该功能的页面位置有不可见的链接跳转模块，于是删除了全局config中的<code>aomori_social</code>模块，并更改<code>Hexo\"站点文件夹"\themes\aomori\layout\_partial</code>路径下文件夹中的<code>social.ejs</code>，删除了部分代码（具体哪部分我忘了，对不起，但是右键检查网页的链接跳转模块应该可以看到）。</h5>
+
+<p><strong>Q: Emoji Favicon要如何设置？</strong><br>A: Favicon指的是网页tab之前的小标志；在搜索引擎找到一个能复制emoji的网站，把自己想要的emoji复制进去就可以了。</p>
+<p><strong>Q: 页面Front-matter是什么？</strong><br>A: Front-matter中文叫做“扉页”，在Markdown语法（md文件）里是指文件最上方两个“- - -”之间的内容；页面Front-matter指的就是各个页面（page）文件夹里index文件中的front-matter，相应地“文章Front-matter”指的就是文章（post）md文件里的扉页。</p>
+<p><strong>Q: 侧边栏指的是什么？</strong><br>A: 指的是搜索栏和小工具（widget）栏，设置为false后会隐藏这两个板块。</p>
+<p><strong>Q: 如何设置文章封面图片？</strong><br>A: 对于已经打开<code>post_asset_folder</code>模式的朋友，路径写为<code>/"文章title"/"图片名称".jpg</code>就可以了；若没有打开，需要将图片放入<code>/themes/aomori/sources/images</code>，然后按照”图片名称”.jpg的方式写，但是这个方法似乎不太稳定，建议还是采用“资源文件夹”（asset folder）的方式。<br>文章头部图片同理。头部图片不会显示在封面上，封面图片不会显示在文章内。<br></br></p>
+<h2 id="第三天-评论配置"><a href="#第三天-评论配置" class="headerlink" title="第三天-评论配置"></a><strong>第三天-评论配置</strong></h2><p>在搞定基本的配置之后，我开始研究评论系统。</p>
+<p>Aomori提供了多种评论体系，Disqus和DisqusJS因为涉及到不方便在大陆访问所以被我pass，Gitalk和Giscus与GitHub搭边，必须有GitHub账号才能评论，而Remark42虽然界面漂亮功能强大，但是必须进行私有化部署，即部署在（我没有的）云服务器上，故综合各方考虑，最后选择了Valine这个最简单的评论系统。</p>
+<p>手册里对Valine配置的介绍已经比较详细。点开Valine本身的配置手册后，我们<strong>不需要使用底下的HTML片段进行配置</strong>，因为Aomori主题已经内置了Valine系统，只需按照Aomori主题手册里所示，把代码块复制到全局config文件内并更改APPID和APPKey即可。设置好后，在需要评论模块的文章或页面文件的front-matter中加入<code>comments: true</code>即可</p>
+<p>本人遇到的一些问题列示如下：</p>
+<p><strong>Q: LeanCloud必须实名认证吗？</strong><br>A: 国际版是不需要实名认证的。</p>
+<h5>但是本人在使用国际版的时候配置总是失败，所以最后采取了两个解决方式：（1）换成了需要实名认证的华东版；（2）把valine提供的文章阅读量统计功能关闭了，因为看到一个帖子说这个功能可能与评论冲突。做完这两项后评论就正常了，但是不知道究竟是哪个起了作用……</h5>
+
+<p><strong>Q: 如果我想对评论系统进一步个性化呢？</strong><br>A: Valine的官方文件提供了一些个性化的配件，可以放在全局config文件中。我个人用到的如下：</p>
+<pre><code>aomori_valine:
+  enable: true
+  appId: &#39;略&#39;
+  appKey: &#39;略&#39;
+  placeholder: &#39;沉默是金，评论是钻石&#39; #空白评论框内的占位字符
+  avatar: mp #评论者的头像
+</code></pre>
+<p>不添加的话就是默认设置。<br>更多的个性化设置我个人也在研究。感兴趣的朋友可以参考→<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/581640626">Hexo中Buttefly主题Valine评论系统配置以及美化（七）</a></p>
+<p><strong>Q: 评论发不出去，刷新不显示？</strong><br>A: 有可能是因为Valine提供的文章阅读量统计功能与评论冲突，如果开启了<code>visitor: true</code>可以关闭试试看。另外检查一下LeanCloud里面安全域名设置没有。<br></br></p>
+<h2 id="第四天-细节美化"><a href="#第四天-细节美化" class="headerlink" title="第四天-细节美化"></a><strong>第四天-细节美化</strong></h2><p>在评论系统安排妥当之后，我开始进一步琢磨主题配色、小模块的问题。</p>
 <hr>
-<h5>[1]<p id="footnote-1">这是暮流年老师在搜索时发现的；关于Notion建立个人网站可以参阅→<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzAxMjY0NTY5OA==&mid=2649920014&idx=1&sn=7e6195fd652a36611a3a325f4d9645d6&chksm=83a89623b4df1f354854efcb440f51713914ae56bbbe4d29a318cc00070ba8cbfe12cb775a88&token=201204900&lang=zh_CN#rd">懒人必备！Notion一键生成个人网站</a>。</p></h5>
+<h5><p id="footnote-1">[1]这是暮流年老师在搜索时发现的；关于Notion建立个人网站可以参阅→<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzAxMjY0NTY5OA==&mid=2649920014&idx=1&sn=7e6195fd652a36611a3a325f4d9645d6&chksm=83a89623b4df1f354854efcb440f51713914ae56bbbe4d29a318cc00070ba8cbfe12cb775a88&token=201204900&lang=zh_CN#rd">懒人必备！Notion一键生成个人网站</a>。</p></h5>
 
         </div>
 
