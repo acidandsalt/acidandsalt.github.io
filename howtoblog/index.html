@@ -102,7 +102,7 @@
                 recordIP: false,
                 emojiCDN: "",
                 enableQQ: false,
-                requiredFields: []
+                requiredFields: nick
             },
             
             
@@ -349,9 +349,42 @@
 <p>解决方法二：全局安装gulp<br>1.说明：全局安装gulp的目的是通过它执行gulp任务<br>2.安装：命令提示符执行npm install gulp -g<br>3.命令提示符执行gulp -v ，验证一下是否正确安装<br>出现版本号，说明问题已经解决，可以使用gulp-v、gulp less、gulp build等执行操作</p>
 </blockquote>
 <p>然而在我自己的配置过程中，上述做法并没有奏效，于是我直接在我的<code>\Hexo\blog\themes\aomori\source\dist\custom.css</code>文件中进行了改动。</p>
-</br>
-
-<h3 id="4-背景图片"><a href="#4-背景图片" class="headerlink" title="4. 背景图片"></a><strong>4. 背景图片</strong></h3><hr>
+<p>一打开<code>custom.css</code>发现这家伙是好大一坨，没关系，看久了就看出门道来了。</p>
+<p>也有人用<a target="_blank" rel="noopener" href="https://beautifier.io/">在线代码美化网站</a>对这一坨代码进行可视化，但是效果堪忧，所以私以为还是靠自己的眼睛外加<code>Ctrl+F</code>一点点找来得靠谱。</p>
+<p>要在这里更改主题配色，只需要更改最开头的这部分代码中的颜色编码，然后<strong>在Aomori文件夹下用<code>cmd</code>运行<code>npm run build</code></strong>，再<code>hexo clean&hexo g&hexo d</code>即可查看效果。如果不确定如何更改可以先在网页上用右键-检查-styles模块更改颜色预览效果。</p>
+<pre><code>:root&#123;--color-light:#119da4;--color-main:#13505b;
+--color-white:#ccc;--color-white-light:#fff;
+--color-black:#292525;--color-type:#3c4859;
+--color-post-main:#4c4e4d;--color-post-mark:#ff0;
+--plyr-color-main:#119da4&#125;
+</code></pre>
+<p>（为了方便查看回车了几下）<br></br></p>
+<h3 id="4-背景图片"><a href="#4-背景图片" class="headerlink" title="4. 背景图片"></a><strong>4. 背景图片</strong></h3><p>我不满足于单纯改色（而且我色感差差的改了也不好看:P），因此把<code>\Hexo\blog\themes\aomori\source\stylesheets\style.scss</code>文件内开头的代码插入了<code>custom.css</code>文件，从而实现了背景替换图片。图片我的分辨率按照电脑屏幕2160:1440设置的。代码插入的具体位置就是css文件开头，颜色代码块之后。代码如下：</p>
+<pre><code>body
+    &#123;
+        background-image:url(你图片的链接*);
+        background-repeat: rpeat-y; /* 背景重复方式，也可repeat-x或no repeat */
+        background-attachment:fixed; /* 背景是否固定 */
+        background-position:50% 50%;
+        background-size: 100% 100%; /* 至此为新增代码 */
+        font:14px/1 PingFangSC,&quot;Microsoft Yahei&quot;,Microsoft Sans Serif,sans-serif;
+        -webkit-font-smoothing:antialiased;
+        -moz-osx-font-smoothing:grayscale;
+        text-rendering:optimizeLegibility
+        &#125;
+</code></pre>
+<p>（为了方便查看回车了几下，插入css的时候必须是一整行）</p>
+<p>*注：图片链接的获取方式有两种方式：</p>
+<ol>
+<li>放在博客images文件夹下，通过hexo d部署到GitHub，然后在GitHub中打开图片并复制permalink<br><img src="https://cdn.jsdelivr.net/gh/acidandsalt/ohsnap/site_1/1674317651637.png" alt="howtoblog_3"><br>将permalink复制到<a target="_blank" rel="noopener" href="https://nbviewer.org/">nbviewer</a>中，点击Go!后复制地址栏内url，即可获得图片链接。</li>
+</ol>
+<p>（参考：<a target="_blank" rel="noopener" href="https://code84.com/761121.html">hexo博客yilia主题 如何自定义个人博客的背景图片</a>）</p>
+<ol start="2">
+<li>用PicGo进行上传，详细教程见<a target="_blank" rel="noopener" href="http://t.csdn.cn/anQoN">使用github+picGo搭建图床，保姆级教程来了。</a></li>
+</ol>
+<p>用这种方式应该还可以给别的模块改背景，但我目前还没有实践。<br></br></p>
+<h3 id="5-版块透明度"><a href="#5-版块透明度" class="headerlink" title="5. 版块透明度"></a><strong>5. 版块透明度</strong></h3><p>这里我调整的是主页文章版块和侧边栏的透明度。</p>
+<hr>
 <h5><p id="footnote-1">[1]这是暮流年老师在搜索时发现的；关于Notion建立个人网站可以参阅→<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzAxMjY0NTY5OA==&mid=2649920014&idx=1&sn=7e6195fd652a36611a3a325f4d9645d6&chksm=83a89623b4df1f354854efcb440f51713914ae56bbbe4d29a318cc00070ba8cbfe12cb775a88&token=201204900&lang=zh_CN#rd">懒人必备！Notion一键生成个人网站</a>。</p></h5>
 
         </div>
