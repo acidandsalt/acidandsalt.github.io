@@ -129,7 +129,7 @@
                     <div id="typed-strings" style="display:none">
                         <p>蔚海白帆-Haydeeava</p>
                     </div>
-                    <a class="header-type-title" id="typed" href="/">蔚海白帆-Haydeeava</a>
+                    <a class="header-type-title" id="typed" href="/"></a>
                 
     
                 
@@ -243,18 +243,18 @@
 <p>从一月十六号开始着手搭建到一月二十号终于调试基本满意，我从一个连cmd都不会用的纯种小白蜕变成一个（还是不会用cmd的）对代码稍微有了一点点认知的入门者。虽然和真正玩代码的人相比我还差得远，但能做到现在的程度已经是对以前的我的大超越了&gt;:D</p>
 <p>总之，在此记录下我个人博客搭建的历程作为纪念，也为被我拉下水的朋友们提供微薄的参考，希望你们能比我少踩几个坑🤝<br></br></p>
 <h2 id="第一天-选择与搭建"><a href="#第一天-选择与搭建" class="headerlink" title="第一天-选择与搭建"></a><strong>第一天-选择与搭建</strong></h2><p>在注意到网站的后缀是github.io之后，我搜索了“用GitHub搭建个人网站”。搭建网站不止有GitHub一种方法，对于一点儿代码也不想接触的人来说，使用<ins>Notion建站</ins>也是个简便的选择<a href="#footnote-1">[1]</a>。</p>
-<p>使用GitHub建立个人网站，我尝试了三种路径：（1）<a target="_blank" rel="noopener" href="http://t.csdn.cn/V63ok">使用GitHub Pages</a>；（2）<a target="_blank" rel="noopener" href="http://t.csdn.cn/hAhuP">使用Hugo博客+GitHub</a>；（3）使用Hexo博客+GitHub。前两种因为操作比较困难，我半途而废，最终采用了第三种方法。（回过头去看了一眼，Hugo其实也不麻烦，大概率是不熟悉流程+找的教程比较困难所以打了退堂鼓。如果有喜欢的Hugo主题用它也可以。）</p>
-<p>我参考的Hexo教程是：<a target="_blank" rel="noopener" href="http://t.csdn.cn/fO2aK">超详细Hexo博客搭建教程</a>，后来暮流年老师在探索时发现了更详细的教程→<a target="_blank" rel="noopener" href="http://t.csdn.cn/Vka8v">使用 Github Pages 和 Hexo 搭建自己的独立博客【超级详细的小白教程】</a>，基本把涉及到的步骤和问题都写得很清楚，建议按照后一个进行。</p>
+<p>我尝试了三种路径：（1）<a target="_blank" rel="noopener" href="http://t.csdn.cn/V63ok">使用GitHub Pages</a>；（2）<a target="_blank" rel="noopener" href="http://t.csdn.cn/hAhuP">使用Hugo博客+GitHub</a>；（3）使用Hexo博客+GitHub。前两种因为操作比较困难，我半途而废，最终采用了第三种方法。（回过头看了一眼，Hugo其实不麻烦，大概率是不熟悉流程+找的教程比较困难所以打了退堂鼓。如果有喜欢的Hugo主题用它也可以。）</p>
+<p>我参考的Hexo教程是：<a target="_blank" rel="noopener" href="http://t.csdn.cn/fO2aK">超详细Hexo博客搭建教程</a>，后来暮流年老师在探索时发现了更详细的教程→<a target="_blank" rel="noopener" href="http://t.csdn.cn/Vka8v">使用 Github Pages 和 Hexo 搭建自己的独立博客【超级详细的小白教程】</a>，基本把涉及的步骤和问题都写得很清楚，建议按照后一个进行。</p>
 <p><strong>个人经验建议：</strong></p>
 <ol>
-<li>把cmd（就是摁<code>win+R</code>后输入<code>cmd</code>出来的东西）创建一个快捷方式放在触手可及的地方，因为日后用到它的次数还会很多很多；</li>
+<li>把cmd（就是摁<code>win+R</code>后输入<code>cmd</code>出来的东西）创建快捷方式放在触手可及的地方，因为用到它的次数很多；</li>
 <li>以防有人像我一样没接触过cmd→<a target="_blank" rel="noopener" href="http://t.csdn.cn/7SvrN">CMD常用命令大全（值得收藏)</a></li>
-<li>准备一个能够编辑代码文件的软件，比如Notepad++或<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">Visual Studio Code</a>；</li>
+<li>准备一个能够编辑代码的软件，比如Notepad++或<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">Visual Studio Code</a>；</li>
 <li>涉及到Markdown语法（md文件使用的语法）可以查找→<a target="_blank" rel="noopener" href="https://www.markdownguide.org/getting-started/">Markdown Guide</a>；</li>
-<li>GitHub在排版上可能有所改动，如果遇到与教程不一样的情况善用<code>Ctrl+F</code>查找功能，在改文件时<code>Ctrl+F</code>也很好用；</li>
+<li>GitHub页面在排版上有所改动，如果遇到与教程不一样的情况善用<code>Ctrl+F</code>，在改文件时也很好用；</li>
 <li>提前先过一遍Hexo官方文件对熟悉操作很有好处：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo官方文档（中文版）</a></li>
-<li>如果想要在发布博客时加入图片，<strong>建议将全局config文件中的<code>post_asset_folder</code>设置为<code>true</code></strong>，这样新建post时source文件夹内会同时新建同名文件夹，将图片放入同名文件夹中，deploy后网页端能正常显示。（参考<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders">Hexo-资源文件夹</a>）</li>
-<li>很管用的通过页面查看源代码的方式：在想查看的地方<strong>右键-检查</strong>，页面右侧会出现一大块代码，“elements”会高亮显示代码对应的网页位置，“styles”能显示查看的位置格式由哪些源代码控制，很方便预览代码改动的效果或回到文件里改动代码。如图：</li>
+<li>如果想要在发布博客时加入图片，<strong>建议将全局config文件中的<code>post_asset_folder</code>设置为<code>true</code></strong>，这样新建post时source文件夹内会同时新建同名文件夹，将图片放入同名文件夹中，deploy后网页端正常显示的概率大。（参考<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders">Hexo-资源文件夹</a>）</li>
+<li>通过页面查看源代码的方式：在想查看的地方<strong>右键-检查</strong>，页面右侧会出现一大块代码，“elements”会高亮显示代码对应的网页位置，“styles”能显示查看的位置格式由哪些源代码控制，很方便预览代码改动的效果或回到文件里改动代码。如图：</li>
 </ol>
 <p><img src="https://cdn.jsdelivr.net/gh/acidandsalt/ohsnap/site_1/howtoblog_1(1).png" alt="howtoblog_1"></p>
 <p><strong>下载的软件汇总：</strong></p>
@@ -275,84 +275,85 @@
 </ol>
 </br>
 
-<h2 id="第二天-主题基本配置"><a href="#第二天-主题基本配置" class="headerlink" title="第二天-主题基本配置"></a><strong>第二天-主题基本配置</strong></h2><p>在基本的搭建和部署（deploy）完成后，我选择了自己最心水的主题：<a target="_blank" rel="noopener" href="https://aomori.linhong.me/v/chinese/getting-started/intro">Hexo-theme-Aomori</a>。这个主题目前没有变体，除了本身的指导手册以外相关资料也很少，比起更常用的默认主题landscape或NexT主题来讲个性化难度更大，对小白比较不友好。我选择它是因为其排版更符合我个人的喜好。（更多Hexo主题见→<a target="_blank" rel="noopener" href="https://hexo.io/themes/index.html">Theme</a>）</p>
-<p>接下来的内容基本全部关于我如何对这一主题进行配置和个性化，对未选择此主题的读者来说参考价值非常有限，各位可以选择性阅读。</p>
+<h2 id="第二天-主题基本配置"><a href="#第二天-主题基本配置" class="headerlink" title="第二天-主题基本配置"></a><strong>第二天-主题基本配置</strong></h2><p>在基本的搭建和部署（deploy）完成后，我选择了自己最心水的主题：<a target="_blank" rel="noopener" href="https://aomori.linhong.me/v/chinese/getting-started/intro">Hexo-theme-Aomori</a>。</p>
+<p>这个主题目前没有变体，除了本身的指导手册以外相关资料也很少，比起更常用的主题来讲个性化难度更大，对小白比较不友好。我选择它是因为<del>单纯且头铁</del>其排版更符合我个人的喜好。</p>
+<p>（更多Hexo主题见→<a target="_blank" rel="noopener" href="https://hexo.io/themes/index.html">Theme</a>）</p>
+<p>接下来的内容基本全部关于我如何对这一主题进行配置和个性化，对未选择此主题的读者来说参考价值非常有限。</p>
 <p>如果你也选择了Aomori这个主题——我会按照我阅读配置手册和进行配置的顺序列出我遇到的问题，请搭配主题指导手册一同阅读。</p>
-<p><strong>Q: 如何对_config.yml文件进行编辑？</strong><br>A: 用记事本、Notepad++或VScode打开文件进行编辑。个人推荐VScode，因为界面更人性化。</p>
-<p><strong>Q: 全局_config.yml文件是指什么？</strong><br>A: 全局文件是指博客根目录（Hexo本体文件夹下一级的站点文件夹）内的config文件。</p>
-<p><strong>Q: 头像配置“aomori_logo: /images/avatar.jpg”中images文件夹应该建在何处？</strong><br>A: 在<code>Hexo\"站点文件夹"\themes\aomori\sources</code>内新建<code>images</code>文件夹并放入图片。</p>
-<p><strong>Q: 头部菜单配置指什么？</strong><br>A: 指页面右上角的“Home”和“Archive”按钮。冒号后的部分是页面对应的文件夹（相对路径，省略了<code>Hexo\"站点文件夹"\source</code>的部分），更改冒号前的部分可以更改显示出来的名称，在之后添加新的行可以增加头部菜单按钮，比如：</p>
+<p><strong>Q: 如何对_config.yml文件进行编辑？</strong><br>A: 用记事本、Notepad++或VScode打开文件进行编辑。个人推荐界面更人性化的VScode。</p>
+<p><strong>Q: 全局_config.yml文件是指什么？</strong><br>A: 全局文件是指博客根目录（Hexo文件夹下的站点文件夹）内的config文件。</p>
+<p><strong>Q: 头像配置“aomori_logo: /images/avatar.jpg”中images文件夹应该建在何处？</strong><br>A: 在<code>\themes\hexo-theme-aomori\source</code>内新建<code>images</code>文件夹并放入图片。</p>
+<p><strong>Q: 头部菜单配置指什么？</strong><br>A: 指页面右上角的“Home”等一栏。配置内容包括页面对应的文件夹（相对路径，省略了<code>Hexo\"站点文件夹"\source</code>的部分）和按钮名称，在之后添加新的行可以增加头部菜单按钮，如：</p>
 <pre><code>aomori_menu:
     🏠首页: /
     📚归档: /archives
     💙关于: /about
 </code></pre>
 <p><strong>Q: 社交媒体配置指什么？</strong><br>A: 社交媒体配置后的外观如<a target="_blank" rel="noopener" href="https://linhong.me/">demo站点</a>右上角图标所示。</p>
-<h5>我不打算启用该模块，后在配置时发现该功能的页面位置有不可见的链接跳转模块，于是删除了全局config中的<code>aomori_social</code>模块，并更改<code>Hexo\"站点文件夹"\themes\aomori\layout\_partial</code>路径下文件夹中的<code>social.ejs</code>，删除了部分代码（具体哪部分我忘了，对不起，但是右键检查网页的链接跳转模块应该可以看到）。</h5>
+<h5>未启用时发现网页上该功能位置仍有不可见的链接跳转模块。解决方法：删除了全局config文件中的<code>aomori_social</code>模块，并在<code>\aomori\layout\_partial\social.ejs</code>中删除了部分代码（具体哪部分我忘了，对不起，但右键-检查应该可以看到）。</h5>
 
-<p><strong>Q: Emoji Favicon要如何设置？</strong><br>A: Favicon指的是网页tab之前的小标志；在搜索引擎找到一个能复制emoji的网站，把自己想要的emoji复制进去就可以了。</p>
-<p><strong>Q: 页面Front-matter是什么？</strong><br>A: Front-matter中文叫做“扉页”，在Markdown语法（md文件）里是指文件最上方两个“- - -”之间的内容；页面Front-matter指的就是各个页面（page）文件夹里index文件中的front-matter，相应地“文章Front-matter”指的就是文章（post）md文件里的扉页。</p>
+<p><strong>Q: Emoji Favicon要如何设置？</strong><br>A: Favicon指的是网页tab之前的小标志；从能复制emoji的网站复制黏贴至config即可。</p>
+<p><strong>Q: 页面Front-matter是什么？</strong><br>A: Front-matter即扉页，在md文件内是指最上方两个“- - -”之间的内容；页面Front-matter指各个页面index文件中的扉页。</p>
 <p><strong>Q: 侧边栏指的是什么？</strong><br>A: 指的是搜索栏和小工具（widget）栏，设置为false后会隐藏这两个板块。</p>
-<p><strong>Q: 如何设置文章封面图片？</strong><br>A: 对于已经打开<code>post_asset_folder</code>模式的朋友，路径写为<code>/"文章title"/"图片名称".jpg</code>就可以了；若没有打开，需要将图片放入<code>/themes/aomori/sources/images</code>，然后按照”图片名称”.jpg的方式写，但是这个方法似乎不太稳定，建议还是采用“资源文件夹”（asset folder）的方式。<br>文章头部图片同理。头部图片不会显示在封面上，封面图片不会显示在文章内。<br></br></p>
-<h2 id="第三天-评论配置"><a href="#第三天-评论配置" class="headerlink" title="第三天-评论配置"></a><strong>第三天-评论配置</strong></h2><p>在搞定基本的配置之后，我开始研究评论系统。</p>
-<p>Aomori提供了多种评论体系，Disqus和DisqusJS因为涉及到不方便在大陆访问所以被我pass，Gitalk和Giscus与GitHub搭边，必须有GitHub账号才能评论，而Remark42虽然界面漂亮功能强大，但是必须进行私有化部署，即部署在（我没有的）云服务器上，故综合各方考虑，最后选择了Valine这个最简单的评论系统。</p>
-<p>手册里对Valine配置的介绍已经比较详细。点开Valine本身的配置手册后，我们<strong>不需要使用底下的HTML片段进行配置</strong>，因为Aomori主题已经内置了Valine系统，只需按照Aomori主题手册里所示，把代码块复制到全局config文件内并更改APPID和APPKey即可。设置好后，在需要评论模块的文章或页面文件的front-matter中加入<code>comments: true</code>即可</p>
+<p><strong>Q: 如何设置文章封面图片？</strong><br>A: 对于已经设置<code>post_asset_folder: true</code>的朋友，路径写为<code>/"文章文件夹名"/"图片名称".jpg</code>即可。若没有设置，需要将图片放在<code>\aomori\sources\images</code>，按照”图片名称”.jpg的方式写入。文章头部图片同理。头部图片不会显示在封面上，封面图片不会显示在文章内。<br></br></p>
+<h2 id="第三天-评论配置"><a href="#第三天-评论配置" class="headerlink" title="第三天-评论配置"></a><strong>第三天-评论配置</strong></h2><p>在搞定基本的配置之后，开始研究评论系统。</p>
+<p>Aomori提供了多种评论体系，Disqus和Waline不方便在大陆访问，Gitalk和Giscus必须有GitHub账号才能评论，而Remark42虽然界面漂亮功能强大，但必须进行私有化部署，即部署在（我没有的）云服务器上，故综合各方考虑，最后选择了Valine。</p>
+<p>手册里对Valine配置的介绍已经比较详细。我们<strong>不需要使用Valine官网手册内的HTML片段进行配置</strong>，因为Aomori主题已经内置Valine系统，只需按照主题手册把代码块复制到全局config文件内并更改APPID和APPKey即可。设置好后，在文章或页面front-matter中加入<code>comment: true</code>开启当页评论功能。</p>
 <p>本人遇到的一些问题列示如下：</p>
 <p><strong>Q: LeanCloud必须实名认证吗？</strong><br>A: 国际版是不需要实名认证的。</p>
-<h5>但是本人在使用国际版的时候配置总是失败，所以最后采取了两个解决方式：（1）换成了需要实名认证的华东版；（2）把valine提供的文章阅读量统计功能关闭了，因为看到一个帖子说这个功能可能与评论冲突。做完这两项后评论就正常了，但是不知道究竟是哪个起了作用……</h5>
+<h5>但是本人在使用国际版的时候配置总是失败，所以最后采取了两个解决方式：（1）换成了需要实名认证的华东版；（2）把Valine提供的文章阅读量统计功能关闭了，因为看到一个帖子说这个功能可能与评论冲突。做完这两项后评论就正常了，但是不知道究竟是哪个起了作用……</h5>
 
-<p><strong>Q: 如果我想对评论系统进一步个性化呢？</strong><br>A: Valine的官方文件提供了一些个性化的配件，可以放在全局config文件中。我个人用到的如下：</p>
+<p><strong>Q: 如果我想对评论系统进一步个性化呢？</strong><br>A: Valine的官方文件提供了一些个性化的配置，置入全局config文件中生效。如：</p>
 <pre><code>aomori_valine:
     enable: true
     appId: &#39;略&#39;
     appKey: &#39;略&#39;
-    placeholder: &#39;沉默是金，评论是钻石&#39; #空白评论框内的占位字符
+    placeholder: &#39;留下你的评论吧~&#39; #空白评论框内的占位字符
     avatar: mp #评论者的头像
 </code></pre>
 <p>不添加的话就是默认设置。<br>更多的个性化设置我个人也在研究。感兴趣的朋友可以参考→<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/581640626">Hexo中Buttefly主题Valine评论系统配置以及美化（七）</a></p>
-<p><strong>Q: 评论发不出去，刷新不显示？</strong><br>A: 有可能是因为Valine提供的文章阅读量统计功能与评论冲突，如果开启了<code>visitor: true</code>可以关闭试试看。另外检查一下LeanCloud里面安全域名设置没有。<br></br></p>
-<h2 id="第四天-搜索系统"><a href="#第四天-搜索系统" class="headerlink" title="第四天-搜索系统"></a><strong>第四天-搜索系统</strong></h2><p>Aomori主题使用的搜索系统为Algolia，配置手册写得比较清楚，但我也遇到了一些小问题。</p>
-<p>首先就是，在“运行下面的命令更新数据”中，第一行代码</p>
+<p><strong>Q: 评论发不出去，刷新不显示？</strong><br>A: 有可能是因为Valine提供的文章阅读量统计功能与评论冲突，需要关闭<code>visitor: true</code>。另外检查LeanCloud里面安全域名是否设置正确。<br></br></p>
+<h2 id="第四天-搜索系统"><a href="#第四天-搜索系统" class="headerlink" title="第四天-搜索系统"></a><strong>第四天-搜索系统</strong></h2><p>Aomori主题使用的搜索系统为Algolia。我遇到的一些小问题：</p>
+<p>首先，“运行下面的命令更新数据”中的第一行代码</p>
 <pre><code>$ export HEXO_ALGOLIA_INDEXING_KEY=High-privilege API key
 </code></pre>
-<p>其中的“High-privilege API key”指的是Algolia-API keys-Admin API Key这个参数，不是真的就原样复制那个字符串（默）。而且这些命令要用Git Bash在博客根目录运行。</p>
-<p>如果还遇到不成功的问题，那么可以参考→<a target="_blank" rel="noopener" href="http://t.csdn.cn/bE95D">hexo next 搜索 algolia</a>中的方法手动添加环境变量。步骤如下：</p>
+<p>其中“High-privilege API key”指的是Algolia→API keys→Admin API Key这个参数，不是真的就原样复制字符串（默）。此外，这些命令应使用Git Bash在博客根目录运行。</p>
+<p>如果仍不成功，可以参考→<a target="_blank" rel="noopener" href="http://t.csdn.cn/bE95D">hexo next 搜索 algolia</a>中的方法手动添加环境变量。步骤如下：</p>
 <blockquote>
 <p>我的电脑&gt;右键属性&gt;高级设置&gt;环境变量&gt;系统变量-新建<br>变量名：HEXO_ALGOLIA_INDEXING_KEY<br>变量值：你的Admin API Key<br>然后统统点确定。重启电脑后新增的环境变量生效。</p>
 </blockquote>
 </br>
 
-<h2 id="第五天-细节美化"><a href="#第五天-细节美化" class="headerlink" title="第五天-细节美化"></a><strong>第五天-细节美化</strong></h2><p>在基本框架都安排妥当之后，我开始进一步琢磨主题配色、新页面、小模块的问题。</p>
-<p><strong>这部分在GitHub issue也有不少提问，使用者可以先在<a target="_blank" rel="noopener" href="https://github.com/lh1me/hexo-theme-aomori/issues?q=is:open+is:issue">Aomori主题的GitHub Issue</a>中查找自己想了解的问题。</strong></p>
-<p>鉴于原作者并没有把细节美化配置放进主文件中，使用者只能靠自己手改源代码来实现个性化效果。我们从最简单的看起。<br></br></p>
-<h3 id="1-文章缩略显示"><a href="#1-文章缩略显示" class="headerlink" title="1. 文章缩略显示"></a><strong>1. 文章缩略显示</strong></h3><p>这个是很多人问作者也反反复复回答了很多遍。Aomori主题没有内置的缩略效果，必须使用者自己在文章md文件中需要截断的地方添加<code>&lt;!-- more --></code>代码。代码之下的部分不会在主页显示。如图：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/acidandsalt/ohsnap/site_1/howtoblog_2.PNG" alt="howtoblog_2"></br></p>
+<h2 id="第五天-细节美化"><a href="#第五天-细节美化" class="headerlink" title="第五天-细节美化"></a><strong>第五天-细节美化</strong></h2><p>在基本框架都安排妥当之后，我开始进一步琢磨主题配色、新页面、小模块的美化。</p>
+<p><strong>这部分在GitHub issue有不少提问，可以先在<a target="_blank" rel="noopener" href="https://github.com/lh1me/hexo-theme-aomori/issues?q=is:open+is:issue">Aomori主题的GitHub Issue</a>中查找自己想了解的问题。</strong></p>
+<p>鉴于原作者并没有把细节美化配置放进主文件中，大多只能靠自己手改源代码来实现个性化效果。我们从最简单的看起。<br></br></p>
+<h3 id="1-文章缩略显示"><a href="#1-文章缩略显示" class="headerlink" title="1. 文章缩略显示"></a><strong>1. 文章缩略显示</strong></h3><p>这个很多人问，作者也反反复复回答了很多遍。Aomori主题没有内置的缩略效果，必须自己在文章md文件中需要截断的地方添加<code>&lt;!-- more --></code>代码。代码之下的部分不会在主页显示。如图：<br></br></p>
 <h3 id="2-头部菜单"><a href="#2-头部菜单" class="headerlink" title="2. 头部菜单"></a><strong>2. 头部菜单</strong></h3><p>头部菜单的外观可以直接在全局config文件中改动，如：</p>
 <pre><code>aomori_menu:
     🏠首页: /
     📚归档: /archives
     💙关于: /about
 </code></pre>
-<p>可以用<code>hexo new page 页面名称</code>来建立与之相应的页面文件。通过在front-matter设置<code>sidebar: false</code>可以关闭页面侧边栏，<code>layout</code>可以设置页面格式（<code>friends</code>就是<a target="_blank" rel="noopener" href="https://linhong.me/">demo站点</a>的“收藏”页形式，<code>photography</code>是“摄影”页形式）。</p>
+<p>使用<code>hexo new page 页面名称</code>来建立与之相应的页面文件。在front-matter设置<code>sidebar: false</code>关闭页面侧边栏，<code>layout</code>设置页面格式（<code>friends</code>为<a target="_blank" rel="noopener" href="https://linhong.me/">demo站点</a>的“收藏”页形式，<code>photography</code>为“摄影”页形式）。</p>
 <p>如何改动头部菜单特效我还没琢磨。<br></br></p>
 <h3 id="3-主题配色"><a href="#3-主题配色" class="headerlink" title="3. 主题配色"></a><strong>3. 主题配色</strong></h3><p>相关的GitHub Issue：</p>
 <p>● <a target="_blank" rel="noopener" href="https://github.com/lh1me/hexo-theme-aomori/issues/18">Ability to change the accent color #18</a></p>
 <blockquote>
 <p>原作者：“According to your needs, I have extracted the color variables in style.scss. You can change the variables and rebuild them to achieve your needs.”</p>
 </blockquote>
-<p>即原作者把主题色统一放在了<code>\Hexo\"站点文件夹"\themes\aomori\source\stylesheets</code>的<code>base.sass</code>文件下，更改其中的颜色就可以统一更改主题配色。</p>
+<p>即原作者把主题色统一放在<code>\aomori\source\stylesheets\base.sass</code>文件下，更改其中的颜色就可以统一更改主题配色。</p>
 <p>● <a target="_blank" rel="noopener" href="https://github.com/lh1me/hexo-theme-aomori/issues/66">您好！非常喜欢这个主题，请问一下如何才能改变该主题的网页配色呀？ #66</a></p>
-<p>原作者表示，在改动<code>base.sass</code>之后，不仅应该<code>hexo clean&hexo g&hexo d</code>，还需要<strong>在Aomori文件夹下用<code>cmd</code>运行<code>npm run build</code></strong>。</p>
+<p>原作者表示，在改动<code>base.sass</code>之后，需要<strong>在Aomori文件夹下用<code>cmd</code>运行<code>npm run build</code></strong>使其生效。</p>
 <p>在这个过程中可能出现报错。我记得当时我遇到了<code>“'gulp'不是内部或者外部命令，也不是可运行的程序或批处理文件”</code>的错误，参考<a target="_blank" rel="noopener" href="http://t.csdn.cn/nXuwi">这个帖子</a>解决了↓</p>
 <blockquote>
 <p>原因一：环境变量没有设置<br>原因二：没有安装全局的gulp，只安装了本地gulp,命令行无法执行gulp-v，也无法执行gulp其它的相关命令</p>
 <p>解决方法一：设置环境变量<br>1.计算机(右击)-&gt;属性-&gt;高级系统设置 -&gt; 高级-&gt;环境变量<br>2.找到node全局文件路径，输入npm config get prefix</p>
 <p>解决方法二：全局安装gulp<br>1.说明：全局安装gulp的目的是通过它执行gulp任务<br>2.安装：命令提示符执行npm install gulp -g<br>3.命令提示符执行gulp -v ，验证一下是否正确安装<br>出现版本号，说明问题已经解决，可以使用gulp-v、gulp less、gulp build等执行操作</p>
 </blockquote>
-<p>然而在我自己的配置过程中，上述做法并没有奏效，于是我直接在我的<code>\Hexo\blog\themes\aomori\source\dist\custom.css</code>文件中进行了改动。</p>
+<p>然而在我自己的配置过程中，单纯更改<code>base.sass</code>并<code>npm</code>没有奏效，于是我直接在<code>\aomori\source\dist\custom.css</code>文件中进行了改动。</p>
 <p>一打开<code>custom.css</code>发现这家伙是好大一坨，没关系，看久了就看出门道来了。</p>
-<p>也有人用<a target="_blank" rel="noopener" href="https://beautifier.io/">在线代码美化网站</a>对这一坨代码进行可视化，但是效果堪忧，所以私以为还是靠自己的眼睛外加<code>Ctrl+F</code>一点点找来得靠谱。</p>
-<p>要在这里更改主题配色，只需要更改最开头的这部分代码中的颜色编码，然后<strong>在Aomori文件夹下用<code>cmd</code>运行<code>npm run build</code></strong>，再<code>hexo clean&hexo g&hexo d</code>即可查看效果。如果不确定如何更改可以先在网页上用右键-检查-styles模块更改颜色预览效果。</p>
+<p>也有人用<a target="_blank" rel="noopener" href="https://beautifier.io/">在线代码美化网站</a>对这一坨代码进行可视化，但是效果堪忧，私以为还是靠自己的眼睛加<code>Ctrl+F</code>一点点找来得靠谱。</p>
+<p>更改主题配色只需要更改文件最开头的颜色编码（如下），之后的部署步骤与上文相同。如果不确定如何更改可以先在网页上用右键-检查-styles模块更改颜色预览效果。</p>
 <pre><code>:root
     &#123;
         --color-light:#119da4;
@@ -362,7 +363,7 @@
         &#125;
 </code></pre>
 <p>（为了方便查看回车了几下）<br></br></p>
-<h3 id="4-背景图片"><a href="#4-背景图片" class="headerlink" title="4. 背景图片"></a><strong>4. 背景图片</strong></h3><p>我不满足于单纯改色（而且我色感差差的改了也不好看:P），因此把<code>\Hexo\blog\themes\aomori\source\stylesheets\style.scss</code>文件内开头的代码插入了<code>custom.css</code>文件，从而实现了背景替换图片。图片我的分辨率按照电脑屏幕2160:1440设置的。代码插入的具体位置就是css文件开头，颜色代码块之后。代码如下：</p>
+<h3 id="4-背景图片"><a href="#4-背景图片" class="headerlink" title="4. 背景图片"></a><strong>4. 背景图片</strong></h3><p>我不满足于单纯改色（而且我色感差差的改了也不好看:P），因此把<code>\aomori\source\stylesheets\style.scss</code>文件开头的代码插入<code>custom.css</code>文件，从而实现了背景替换图片。图片分辨率按照电脑屏幕2160:1440设置。代码插入的具体位置为css文件开头，颜色代码块之后。如下：</p>
 <pre><code>body
     &#123;
         background-image:url(你图片的链接*);
@@ -388,7 +389,7 @@
 </ol>
 <p>用这种方式应该还可以给别的模块改背景，但我目前还没有实践。<br></br></p>
 <h3 id="5-版块透明度"><a href="#5-版块透明度" class="headerlink" title="5. 版块透明度"></a><strong>5. 版块透明度</strong></h3><p>这里我调整的是主页文章版块和侧边栏的透明度。</p>
-<p>我在<code>custom.css</code>中查找我想要改动的模块，在颜色代码后插入<code>opacity:0~1间的数值</code>。如：</p>
+<p>在<code>custom.css</code>中查找想要改动的模块，在颜色代码后插入<code>opacity:0~1间的数值</code>。如：</p>
 <pre><code>.sidebar .widget
     &#123;
         ...
@@ -399,30 +400,31 @@
 </code></pre>
 </br>
 
-<h3 id="6-斜体与字号"><a href="#6-斜体与字号" class="headerlink" title="6. 斜体与字号"></a><strong>6. 斜体与字号</strong></h3><p>在测试时我发现这个博客主题不支持斜体，斜体文字实现出来是文字底下加着重号的形式，对英文非常不便。</p>
-<p>在网页端右键-检查查看斜体字的代码信息，图一是着重号形式，图二是斜体形式，取掉了font-style，-webkit-text-emphasis和text-emphasis之后回归了经典斜体。</p>
+<h3 id="6-斜体与字号"><a href="#6-斜体与字号" class="headerlink" title="6. 斜体与字号"></a><strong>6. 斜体与字号</strong></h3><p>测试时我发现这个博客主题不支持斜体，斜体文字实现出来是文字下加着重号的形式，对英文而言非常不便。</p>
+<p>在网页端右键-检查查看斜体字的代码信息，图一是着重号形式，图二是斜体形式，勾选掉font-style，-webkit-text-emphasis和text-emphasis之后回归了经典斜体。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/acidandsalt/ohsnap/site_1/Collage_20230122_104454.jpg"></p>
-<p>因此我粗暴地在<code>build.css</code>文件中把上述三个代码删除了。</p>
-<p>h5h6字号的实现稍微麻烦一些。作者在<code>build.css</code>中将h4h5h6设置为了同样的字号，我为了不影响其他代码，将h5h6单独分离出来设置了更小的字号。如下：</p>
+<p>因此我简单粗暴地在<code>build.css</code>文件中将上述三个代码删除，实现了经典斜体。</p>
+<p>h5h6字号的实现稍微麻烦一些。作者在<code>build.css</code>中将h4h5h6设置为了同样的字号；为了不影响其他代码，可以将h5h6单独分离出来设置更小的字号。如下：</p>
 <pre><code>.h1,h1&#123;font-size:2rem&#125;
 ...
 .h4,h4&#123;font-size:1.2rem&#125;
 .h5,h5&#123;font-size:1rem&#125;
 .h6,h6&#123;font-size:.8rem&#125;
 </code></pre>
-<p>如果要调整某些特定模块的字号也可以通过右键-检查获取模块文字具体名称后在<code>build.css</code>中搜索并调整字号。<br></br></p>
+<p>某些特定模块的字号也可以通过右键-检查获取模块文字具体名称后，在<code>build.css</code>中搜索并调整。<br></br></p>
 <h2 id="未来目标与Bug记录"><a href="#未来目标与Bug记录" class="headerlink" title="未来目标与Bug记录"></a><strong>未来目标与Bug记录</strong></h2><ol>
 <li>Valine的个性化配置；</li>
 <li>夜间模式；</li>
 <li>手机版的排布更人性化一些，e.g. 分类和目录放在顶部；</li>
-<li>左侧分享功能删除；<br>……</li>
+<li>左侧分享功能删除；</br><br>……</br></li>
 </ol>
-<p>2023/1/22：</p>
+<p><strong>2023/1/22：</strong></p>
 <p>很心碎，不知道什么时候网站标题突然消失了，查看网页代码发现</p>
 <pre><code>&lt;a class=&quot;header-type-title&quot; id=typed href=&quot;/&quot;&gt;&lt;/a&gt;
 </code></pre>
 <p>和demo网站对比发现那个&lt;/a&gt;前面应该是有文字的，于是去header.ejs手动添加了文字，但是不知道会不会搞坏源代码……</p>
-<p>转头发现评论系统不知道为什么也没了，脑子疼！！不知道问题在哪，先把昨天添加在全局config里面的valine设置删除了……</p>
+<p><del>转头发现评论系统不知道为什么也没了，脑子疼！！不知道问题在哪，先把昨天添加在全局config里面的valine设置删除了……</del></p>
+<p>啊啊！评论系统刷新出来了！没事了！好感动！大松一口气！</p>
 <hr>
 <h5><p id="footnote-1">[1]这是暮流年老师在搜索时发现的；关于Notion建立个人网站可以参阅→<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzAxMjY0NTY5OA==&mid=2649920014&idx=1&sn=7e6195fd652a36611a3a325f4d9645d6&chksm=83a89623b4df1f354854efcb440f51713914ae56bbbe4d29a318cc00070ba8cbfe12cb775a88&token=201204900&lang=zh_CN#rd">懒人必备！Notion一键生成个人网站</a>。</p></h5>
 
