@@ -189,7 +189,7 @@
             <section class="inner">
                 <section class="inner-main">
                     <div class="post">
-    <article id="post-cldb15q5v0007z8dyghwkey5a" class="article article-type-post" itemscope
+    <article id="post-cldb33qgy00088gdy8vr98wcs" class="article article-type-post" itemscope
     itemprop="blogPost">
 
     <div class="article-inner">
@@ -238,7 +238,7 @@
 
             
                 <div class="article-symbols">
-                    <font color=lightgrey><ion-icon name="bar-chart-outline"></ion-icon>  7.9k 字&nbsp;&nbsp;<ion-icon name="time-outline"></ion-icon>7 mins.</font>
+                    <font color=lightgrey><ion-icon name="bar-chart-outline"></ion-icon>  8.2k 字&nbsp;&nbsp;<ion-icon name="time-outline"></ion-icon>7 mins.</font>
                 </div>
             
             
@@ -432,6 +432,23 @@
 </br>
 
 <h3 id="8-博文加密与隐藏功能"><a href="#8-博文加密与隐藏功能" class="headerlink" title="8. 博文加密与隐藏功能"></a><strong>8. 博文加密与隐藏功能</strong></h3><p>参考：<br><a target="_blank" rel="noopener" href="http://t.csdn.cn/5qAQD">Hexo博客技巧：对文章进行加密</a><br><a target="_blank" rel="noopener" href="https://github.com/prinsss/hexo-hide-posts">Hexo隐藏博文插件</a><br></br></p>
+<h3 id="9-博文题头优化"><a href="#9-博文题头优化" class="headerlink" title="9. 博文题头优化"></a><strong>9. 博文题头优化</strong></h3><p>在手机模式下文章前的标签、分类等排版会被挤压，导致文字竖排。通过在<code>custom.css</code>文件中加入<code>flex-wrap</code>代码实现自动换行。</p>
+<pre><code>.post .article .article-more-info, .tweet .article .article-more-info &#123;
+    display: -webkit-box;
+    ...
+    position: relative;
+    flex-wrap: wrap; /* 新增代码 */
+&#125;
+</code></pre>
+<p>为了不让排布看起来太拥挤，修改：</p>
+<pre><code>body &#123;
+    ...
+    font: 14px/1.5 PingFangSC,&quot;Microsoft Yahei&quot;,Microsoft Sans Serif,sans-serif;
+    /* 将14px/1改为14px/1.5 */
+    ...
+</code></pre>
+</br>
+
 <h2 id="未来目标与Bug记录"><a href="#未来目标与Bug记录" class="headerlink" title="未来目标与Bug记录"></a><strong>未来目标与Bug记录</strong></h2><ol>
 <li>Valine的个性化配置；</li>
 <li>夜间模式；</li>
@@ -451,6 +468,8 @@
 <p>隐藏了左侧分享功能。完成了昨天没来得及完成的加密功能。加入了footnote插件（感谢綪咪推荐&lt;3）</p>
 <p>进一步美化（again，在綪咪的网站偷学&lt;3）：添加了运行时间/（用很笨的方法）实现了wordcount。</p>
 <p>FunnyTitle还没有搞定:(</p>
+<p><strong>2023/1/25：</strong></p>
+<p>优化了手机模式下的文章题头。</p>
 <hr>
 <h6><ion-icon name="image-sharp"></ion-icon> <font color="lightgray">封面图片来自Unsplash</font></h6>
 
