@@ -189,7 +189,7 @@
             <section class="inner">
                 <section class="inner-main">
                     <div class="post">
-    <article id="post-cldbbc0dc000710dybi8w1e8h" class="article article-type-post" itemscope
+    <article id="post-cldbingkj0007l0dy6j8e8uak" class="article article-type-post" itemscope
     itemprop="blogPost">
 
     <div class="article-inner">
@@ -238,7 +238,7 @@
 
             
                 <div class="article-symbols">
-                    <font color=lightgrey><ion-icon name="bar-chart-outline"></ion-icon>  8.3k 字&nbsp;&nbsp;<ion-icon name="time-outline"></ion-icon>28 mins.</font>
+                    <font color=lightgrey><ion-icon name="bar-chart-outline"></ion-icon>  8.3k 字&nbsp;&nbsp;<ion-icon name="time-outline"></ion-icon>7 mins.</font>
                 </div>
             
             
@@ -373,16 +373,16 @@
         &#125;
 </code></pre>
 <p>（为了方便查看回车了几下）<br></br></p>
-<h3 id="4-背景图片"><a href="#4-背景图片" class="headerlink" title="4. 背景图片"></a><strong>4. 背景图片</strong></h3><p>我不满足于单纯改色（而且我色感差差的改了也不好看:P），因此把<code>\aomori\source\stylesheets\style.scss</code>文件开头的代码插入<code>custom.css</code>文件，从而实现了背景替换图片。图片分辨率按照电脑屏幕2160:1440设置。代码插入的具体位置为css文件开头，颜色代码块之后。如下：</p>
+<h3 id="4-背景图片"><a href="#4-背景图片" class="headerlink" title="4. 背景图片"></a><strong>4. 背景图片</strong></h3><p>我不满足于单纯改色（而且我色感差差的改了也不好看:P），因此把<code>\aomori\source\stylesheets\style.scss</code>文件开头的代码插入<code>custom.css</code>文件，从而实现了背景替换图片。代码插入的具体位置为css文件开头，颜色代码块之后。如下：</p>
 <pre><code>body
     &#123;
         background-image:url(你图片的链接*);
-        background-repeat: rpeat-y;
-        /* 背景重复方式，也可repeat-x或no repeat */
+        background-repeat: no-repeat;
+        /* 背景重复方式，也可repeat-x或repeat-y */
         background-attachment:fixed;
         /* 背景是否固定 */
         background-position:50% 50%;
-        background-size: 100% 100%;
+        background-size: cover;
         /* 至此为新增代码 */
         font:14px/1 ...;
         ...
