@@ -270,3 +270,4 @@ import { addNewClass, removeClass, throttle } from './class-module'
         $('.intersection-observer-ad').css('display', 'flex')
     }
 })()
+
