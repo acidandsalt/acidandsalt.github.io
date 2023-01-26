@@ -1038,6 +1038,10 @@ legend {
 	width: 100%
 }
 
+.dark .form-input {
+    background: #292525;
+}
+
 .form-input:focus {
 	border-color: #455a64;
 	box-shadow: 0 0 0 .1rem rgba(87, 85, 217, .2)
@@ -5784,6 +5788,11 @@ a.text-error:visited {
 	padding: .5em;
 	color: #333;
 	background: #f8f8f8
+}
+
+.dark .hljs {
+	color: rgb(220, 220, 220);
+	background: #5b5b5b
 }
 
 .hljs-comment,

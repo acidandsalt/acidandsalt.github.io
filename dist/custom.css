@@ -47,16 +47,8 @@ body {
 	text-rendering: optimizeLegibility
 }
 
-.dark {
+.dark body {
     background-image: url('https://cdn.jsdelivr.net/gh/acidandsalt/ohsnap/site_1/a2.jpg');
-    background-repeat: no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
-	background-position: 50% 50%;
-	font: 14px/1.5 PingFangSC, "Microsoft Yahei", Microsoft Sans Serif, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-rendering: optimizeLegibility
 }
 
 a {
@@ -67,10 +59,6 @@ a {
 
 a,
 a:visited {
-	color: var(--color-type)
-}
-
-.dark {
 	color: var(--color-type)
 }
 
@@ -398,6 +386,7 @@ img:not([src]):not([srcset]) {
 	z-index: 10;
 	-webkit-transition: all .3s;
 	transition: all .3s;
+    opacity: 0.8;
 }
 
 .sidebar .search .form-input {
@@ -418,27 +407,12 @@ img:not([src]):not([srcset]) {
 	color: var(--color-white)
 }
 
-.dark {
-	font-family: Oswald, sans-serif;
-	color: var(--color-white)
-}
-
 .sidebar .search .form-input::-moz-placeholder {
 	font-family: Oswald, sans-serif;
 	color: var(--color-white)
 }
 
-.dark {
-	font-family: Oswald, sans-serif;
-	color: var(--color-white)
-}
-
 .sidebar .search .form-input:-ms-input-placeholder {
-	font-family: Oswald, sans-serif;
-	color: var(--color-white)
-}
-
-.dark {
 	font-family: Oswald, sans-serif;
 	color: var(--color-white)
 }
@@ -768,27 +742,12 @@ img:not([src]):not([srcset]) {
 	padding: 0 0 12px
 }
 
-.dark {
-	font-size: 1.0rem;
-	font-weight: 500;
-	padding: 0 0 12px
-}
-
 .index .article .article-inner .article-body .article-title a {
 	color: var(--color-type);
 	line-height: 1.3
 }
 
-.dark {
-	color: var(--color-type);
-	line-height: 1.3
-}
-
 .index .article .article-inner .article-body .article-title a:hover {
-	color: var(--color-main)
-}
-
-.dark {
 	color: var(--color-main)
 }
 
@@ -973,9 +932,7 @@ img:not([src]):not([srcset]) {
 }
 
 .dark {
-	font-size: 1.1rem;
-	font-weight: 300;
-	padding-top: 0px
+	font-size: 1.2rem;
 }
 
 .post .article .article-title a,
@@ -1603,10 +1560,6 @@ img:not([src]):not([srcset]) {
 		font-size: 20px
 	}
 
-    .dark {
-		font-size: 20px
-	}
-
 	.footer .footer-inner {
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal;
@@ -1685,6 +1638,10 @@ img:not([src]):not([srcset]) {
 	border-radius: .3rem;
 	box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, .05), 0 0 0.05rem rgba(0, 0, 0, .1);
 	background-color: #fafafa;
+}
+
+.dark .admonition {
+	background-color: #4f4f4f;
 }
 
 p.admonition-title {
@@ -1767,3 +1724,12 @@ p.admonition-title {
 .admonition>:last-child {
 	margin-bottom: 0 !important
 }
+
+.dark #RightDownBtn {
+    background: #3e3e3e;
+}
+
+
+
+
+
