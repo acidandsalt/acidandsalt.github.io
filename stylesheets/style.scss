@@ -2,8 +2,8 @@
 /* 样式重置 */
 
 body {
-    background-image:
-    background-repeat:
+    background-image: none;
+    background-repeat: no-repeat;
     background-attachment:fixed;
     background-position:50% 50%;
 	background-size: 100% 100%;
@@ -1092,3 +1092,4 @@ img:not([src]):not([srcset]) {
 /* import */
 @import './page';
 @import './media-fixed';
+@import './_god/*'

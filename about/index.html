@@ -177,7 +177,7 @@
 <div class="page">
   
 <article
-id="page-cldcopcqg0000cwdyeolp4wka"
+id="page-cldczdk8t0000jodyhjwkhet0"
 class="article article-type-page"
 >
   <div class="article-inner">
@@ -296,7 +296,7 @@ class="article article-type-page"
 </body>
 
 <div id="RightDownBtn">
-    <a onclick="switchNightMode()" title="切换暗黑模式">
+    <a onclick="switchDarkMode()" title="切换暗黑模式">
         <svg style=" width: 1.5em;height: 1.5em;" class="icon" aria-hidden="true">
             <use id="modeicon" xlink:href="#icon-_moon">
             </use>
@@ -367,61 +367,22 @@ class="article article-type-page"
 </div>
 
 <script>
-    function switchNightMode() {
-        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($("body")), setTimeout(
-            function () {
-                var DarkMode = document.cookie.replace(/(?:(?:^|.*;\s*)DarkMode\s*\=\s*([^;]*).*$)|^.*$/, "$1") ||
-                    '0';
-                (DarkMode == '0') ? ($("html").addClass("DarkMode"), document.cookie = "DarkMode=1;path=/", console
-                    .log('夜间模式开启'), $('#modeicon').attr("xlink:href", "#icon-sun")) : ($("html").removeClass(
-                        "DarkMode"), document.cookie = "DarkMode=0;path=/", console.log('夜间模式关闭'), $('#modeicon')
-                    .attr("xlink:href", "#icon-_moon")), setTimeout(function () {
-                    $(".Cuteen_DarkSky").fadeOut(1e3, function () {
-                        $(this).remove()
-                    })
-                }, 2e3)
-            }), 50
-    }
-
-    function checkNightMode() {
-        if ($("html").hasClass("n-f")) {
-            $("html").removeClass("day");
-            $("html").addClass("DarkMode");
-            $('#modeicon').attr("xlink:href", "#icon-sun")
-            return;
-        }
-        if ($("html").hasClass("d-f")) {
-            $("html").removeClass("DarkMode");
-            $("html").addClass("day");
-            $('#modeicon').attr("xlink:href", "#icon-_moon")
-
-            return;
-        }
-        if (document.cookie.replace(/(?:(?:^|.*;\s*)DarkMode\s*\=\s*([^;]*).*$)|^.*$/, "$1") === '') {
-            if (new Date().getHours() >= 23 || new Date().getHours() < 7) {
-                $("html").addClass("DarkMode");
-                document.cookie = "DarkMode=1;path=/";
-                console.log('夜间模式开启');
-                $('#modeicon').attr("xlink:href", "#icon-sun")
-            } else {
-                $("html").removeClass("DarkMode");
-                document.cookie = "DarkMode=0;path=/";
-                console.log('夜间模式关闭');
-                $('#modeicon').attr("xlink:href", "#icon-_moon")
-            }
+    function switchDarkMode() {
+        var isDark = document.documentElement.classList.toggle('dark');
+        if (isDark) {
+        localStorage.setItem('theme', 'dark');
         } else {
-            var DarkMode = document.cookie.replace(/(?:(?:^|.*;\s*)DarkMode\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
-            if (DarkMode == '0') {
-                $("html").removeClass("DarkMode");
-                $('#modeicon').attr("xlink:href", "#icon-_moon")
-            } else if (DarkMode == '1') {
-                $("html").addClass("DarkMode");
-                $('#modeicon').attr("xlink:href", "#icon-sun")
-            }
+        localStorage.setItem('theme', 'light');
         }
-    }
-    BackTOP();
-    checkNightMode();
+      }
+
+    if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark')
+        } else if (new Date().getHours() >= 21 || new Date().getHours() < 7) {
+        document.documentElement.classList.add('dark')
+        } else if (matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark')
+        }
 </script>
 
 <style>
@@ -452,46 +413,7 @@ class="article article-type-page"
         transition: .2s cubic-bezier(.25, .46, .45, .94);
     }
 
-    /* font color */
-    .DarkMode #page,
-    .DarkMode #colophon,
-    .DarkMode #vcomments .vbtn,
-    .DarkMode .art-content #archives .al_mon_list .al_mon,
-    .DarkMode .art-content #archives .al_mon_list span,
-    .DarkMode body,
-    .DarkMode .art-content #archives .al_mon_list .al_mon,
-    .DarkMode .art-content #archives .al_mon_list span,
-    .DarkMode button,
-    .DarkMode .art .art-content #archives a,
-    .DarkMode textarea,
-    .DarkMode strong,
-    .DarkMode a,
-    .DarkMode p,
-	.DarkMode li,
-    .DarkMode .label {
-        color: rgba(255, 255, 255, .6);
-    }
-
-	
-    .DarkMode #page,
-    .DarkMode body,
-    .DarkMode #colophon,
-    .DarkMode #main-container,
-    .DarkMode #page .yya,
-    .DarkMode #content,
-    .DarkMode #contentss,
-    .DarkMode #footer {
-        background-color: #292a2d;
-    }
-    .DarkMode strong,
-    .DarkMode img {
-        filter: brightness(.7);
-    }
-
 </style>
-
-<!-- left side bar.end -->
-
 
 
 </html>
