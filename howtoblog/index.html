@@ -115,6 +115,15 @@
 <meta name="generator" content="Hexo 5.4.2"></head>
 
 <body>
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark')
+            } else if (new Date().getHours() >= 23 || new Date().getHours() < 4) {
+            document.documentElement.classList.add('dark')
+            } else if (matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark')
+            }
+    </script>
 
     <div class="container">
     <header class="header">
@@ -189,7 +198,7 @@
             <section class="inner">
                 <section class="inner-main">
                     <div class="post">
-    <article id="post-cldd6eent0008r0dyetxj9qm4" class="article article-type-post" itemscope
+    <article id="post-cldeohmzc000rtsdyfr7w1o70" class="article article-type-post" itemscope
     itemprop="blogPost">
 
     <div class="article-inner">
@@ -238,7 +247,7 @@
 
             
                 <div class="article-symbols">
-                    <font color=lightgrey><ion-icon name="bar-chart-outline"></ion-icon>  4.9k 字&nbsp;&nbsp;<ion-icon name="time-outline"></ion-icon>16 mins.</font>
+                    <font color=lightgrey><ion-icon name="bar-chart-outline"></ion-icon>  22k 字&nbsp;&nbsp;<ion-icon name="time-outline"></ion-icon>18 mins.</font>
                 </div>
             
             
@@ -449,12 +458,285 @@
 </code></pre>
 </br>
 
+<h3 id="10-增加夜间模式"><a href="#10-增加夜间模式" class="headerlink" title="10. 增加夜间模式"></a><strong>10. 增加夜间模式</strong></h3><p>采用LocalStorage&gt;定时&gt;浏览器设置的优先度。用的笨办法。</p>
+<details>
+    <summary><strong>Step 1：</strong>在\themes\aomori\layout\_partial文件夹下新建ejs文件，复制如下代码（对不起，没搞懂代码collapse所以很长）：</summary>
+
+<pre><code>/* 设置切换按钮图案 */
+&lt;div id=&quot;RightDownBtn&quot;&gt;
+    &lt;a onclick=&quot;switchDarkMode()&quot; title=&quot;切换暗黑模式&quot;&gt;
+        &lt;svg style=&quot; width: 1.5em;height: 1.5em;&quot; class=&quot;icon&quot; aria-hidden=&quot;true&quot;&gt;
+            &lt;use id=&quot;modeicon&quot; xlink:href=&quot;#icon-_moon&quot;&gt;
+            &lt;/use&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    &lt;svg aria-hidden=&quot;true&quot; style=&quot;position: absolute; width: 0px; height: 0px; overflow: hidden;&quot;&gt;
+        &lt;symbol id=&quot;icon-sun&quot; viewBox=&quot;0 0 1024 1024&quot;&gt;
+            &lt;path
+                d=&quot;M511.99976 511.99976m-511.99976 0a511.99976 511.99976 0 1 0 1023.99952 0 511.99976 511.99976 0 1 0-1023.99952 0Z&quot;
+                fill=&quot;#91D2F2&quot;&gt;&lt;/path&gt;
+            &lt;path
+                d=&quot;M144.623932 868.455593C237.679889 964.327548 367.831828 1023.99952 511.99976 1023.99952c269.983873 0 490.99977-209.007902 510.455761-474.031778C956.991551 535.703749 887.559584 527.999753 815.623618 527.999753c-309.535855 0-572.895731 142.055933-670.999686 340.45584z&quot;
+                fill=&quot;#198058&quot;&gt;&lt;/path&gt;
+            &lt;path
+                d=&quot;M979.623541 575.99973c-351.319835 0-647.791696 155.655927-741.279653 368.639827A509.359761 509.359761 0 0 0 511.99976 1023.99952c260.839878 0 475.967777-195.111909 507.799762-447.31979a1194.34344 1194.34344 0 0 0-40.175981-0.68z&quot;
+                fill=&quot;#1E9969&quot;&gt;&lt;/path&gt;
+            &lt;path
+                d=&quot;M69.711967 769.831639C158.503926 921.815568 323.271848 1023.99952 511.99976 1023.99952a509.455761 509.455761 0 0 0 269.631874-76.783964C657.111692 828.375612 464.271782 751.999648 247.623884 751.999648c-61.575971 0-121.183943 6.271997-177.911917 17.831991z&quot;
+                fill=&quot;#6AA33A&quot;&gt;&lt;/path&gt;
+            &lt;path
+                d=&quot;M487.887771 1023.39152c-86.543959-122.151943-236.911889-214.679899-417.591804-252.543881 85.11996 144.919932 239.415888 244.279885 417.591804 252.543881z&quot;
+                fill=&quot;#95E652&quot;&gt;&lt;/path&gt;
+            &lt;path
+                d=&quot;M394.159815 167.999921l-45.255979 45.255979L303.647858 167.999921l45.255978-45.255979zM394.159815 503.999764l-45.255979 45.255979L303.655858 503.999764l45.247978-45.247979z&quot;
+                fill=&quot;#FFF8E6&quot;&gt;&lt;/path&gt;
+            &lt;path
+                d=&quot;M180.879915 290.719864l45.247979 45.247979-45.255979 45.255978-45.255979-45.255978zM516.903758 290.719864l45.247978 45.247979-45.247978 45.247978-45.247979-45.247978z&quot;
+                fill=&quot;#FFF8E6&quot;&gt;&lt;/path&gt;
+            &lt;path d=&quot;M198.087907 185.207913h63.99997v63.99997h-63.99997zM435.671796 422.791802h63.99997v63.99997h-63.99997z&quot;
+                fill=&quot;#FFF8E6&quot;&gt;&lt;/path&gt;
+            &lt;path d=&quot;M198.087907 422.791802h63.99997v63.99997h-63.99997zM435.671796 185.207913h63.99997v63.99997h-63.99997z&quot;
+                fill=&quot;#FFF8E6&quot;&gt;&lt;/path&gt;
+            &lt;path
+                d=&quot;M348.879836 335.999843m-183.999913 0a183.999914 183.999914 0 1 0 367.999827 0 183.999914 183.999914 0 1 0-367.999827 0Z&quot;
+                fill=&quot;#FFEAB3&quot;&gt;&lt;/path&gt;
+            &lt;path
+                d=&quot;M348.879836 335.999843m-159.999925 0a159.999925 159.999925 0 1 0 319.99985 0 159.999925 159.999925 0 1 0-319.99985 0Z&quot;
+                fill=&quot;#FFDC80&quot;&gt;&lt;/path&gt;
+        &lt;/symbol&gt;
+        &lt;symbol id=&quot;icon-_moon&quot; viewBox=&quot;0 0 1024 1024&quot;&gt;
+            &lt;path d=&quot;M512 512m-512 0a512 512 0 1 0 1024 0 512 512 0 1 0-1024 0Z&quot; fill=&quot;#323232&quot;&gt;&lt;/path&gt;
+            &lt;path
+                d=&quot;M512 512m-407.005867 0a407.005867 407.005867 0 1 0 814.011734 0 407.005867 407.005867 0 1 0-814.011734 0Z&quot;
+                fill=&quot;#494A4A&quot;&gt;&lt;/path&gt;
+            &lt;path
+                d=&quot;M748.1344 633.9584c0-1.143467 0.085333-2.286933 0.085333-3.413333a69.512533 69.512533 0 0 0-8.823466-33.979734q-1.058133-1.911467-2.2528-3.7376l-0.187734-0.3072a70.485333 70.485333 0 0 0-5.2736-7.099733l-0.238933-0.273067q-1.3312-1.536-2.730667-3.003733l-0.3072-0.324267a70.894933 70.894933 0 0 0-6.417066-5.819733l-0.5632-0.443733q-1.467733-1.160533-3.003734-2.235734l-0.494933-0.341333q-1.706667-1.2288-3.6352-2.3552l-0.256-0.136533q-1.706667-0.989867-3.413333-1.8944l-0.887467-0.4608q-1.604267-0.802133-3.242667-1.536l-0.6144-0.273067q-1.928533-0.836267-3.9424-1.553067l-0.8192-0.273066a54.8864 54.8864 0 0 0-3.242666-1.024l-1.143467-0.324267a85.248 85.248 0 0 0-3.601067-0.887467l-0.546133-0.119466a67.345067 67.345067 0 0 0-4.1984-0.733867l-1.143467-0.136533q-1.706667-0.2048-3.2768-0.341334l-1.245866-0.1024a74.786133 74.786133 0 0 0-4.386134-0.1536 69.8368 69.8368 0 0 0-20.48 3.037867 104.106667 104.106667 0 0 0-12.1344-11.076267 258.696533 258.696533 0 0 0-449.9456-248.763733 183.1424 183.1424 0 0 1 106.939734-34.2528c5.12 0 10.24 0.221867 15.36 0.631467a183.125333 183.125333 0 0 1 50.5344 11.52h0.170666q3.874133 1.501867 7.68 3.157333l0.256 0.1024 7.441067 3.413333 0.273067 0.136534q3.669333 1.826133 7.253333 3.805866l0.221867 0.119467q3.618133 2.013867 7.133866 4.164267a184.610133 184.610133 0 0 1 26.760534 20.036266h0.085333q2.986667 2.696533 5.870933 5.5296l0.324267 0.3072q2.781867 2.7648 5.461333 5.632l0.443734 0.477867q2.6112 2.833067 5.12 5.768533l0.494933 0.580267q2.4576 2.9184 4.795733 5.956267l0.494934 0.648533q2.321067 3.037867 4.522666 6.178133l0.426667 0.6144q2.2016 3.1744 4.283733 6.4512l0.324267 0.529067q2.116267 3.413333 4.078933 6.826667l0.170667 0.3072c1.553067 2.7136 3.0208 5.495467 4.437333 8.2944a56.149333 56.149333 0 0 0-12.578133 2.304 82.824533 82.824533 0 0 0-134.007467 18.039466 42.530133 42.530133 0 0 0-53.009066 41.079467 104.277333 104.277333 0 0 0-42.2912 80.110933 13.653333 13.653333 0 0 0 0 1.4336v0.426667c0 0.136533 0.1024 0.682667 0.187733 1.024s0 0.3072 0.1024 0.4608 0.2048 0.733867 0.324267 1.092267l0.1024 0.3072a15.36 15.36 0 0 0 0.580266 1.416533l0.1024 0.187733a16.520533 16.520533 0 0 0 0.648534 1.211734l0.221866 0.3584c0.221867 0.3584 0.4608 0.733867 0.7168 1.092266l0.221867 0.3072a26.333867 26.333867 0 0 0 2.338133 2.798934l0.119467 0.119466q0.6144 0.631467 1.297067 1.262934l0.2048 0.187733q0.7168 0.648533 1.501866 1.297067 1.706667 1.416533 3.720534 2.781866c0.6656 0.4608 1.348267 0.904533 2.065066 1.348267 26.914133 16.7936 87.995733 28.535467 159.044267 28.535467 19.3536 0 37.956267-0.8704 55.3472-2.474667l-0.494933 0.750933-0.426667 0.6144q-2.2016 3.140267-4.539733 6.178134l-0.477867 0.631466q-2.338133 3.037867-4.795733 5.956267l-0.494934 0.580267q-2.491733 2.935467-5.12 5.7856l-0.443733 0.477866q-2.679467 2.884267-5.461333 5.649067l-0.3072 0.290133q-2.884267 2.833067-5.870934 5.546667a184.8832 184.8832 0 0 1-26.7776 20.036267q-3.515733 2.167467-7.150933 4.181333l-0.187733 0.1024q-3.584 1.979733-7.2704 3.805867l-0.256 0.136533q-3.6864 1.826133-7.458134 3.413333l-0.238933 0.1024q-3.805867 1.706667-7.68 3.157334h-0.136533a183.057067 183.057067 0 0 1-50.551467 11.52c-5.12 0.4096-10.24 0.631467-15.36 0.631466a183.159467 183.159467 0 0 1-106.939733-34.2528 258.5088 258.5088 0 0 0 180.138666 107.093334 109.550933 109.550933 0 0 0-3.259733 26.453333 16.520533 16.520533 0 0 0 0.1024 1.706667v0.529066c0 0.170667 0.136533 0.853333 0.221867 1.262934l0.136533 0.5632 0.392533 1.365333 0.136534 0.4096a13.892267 13.892267 0 0 0 0.733866 1.706667l0.119467 0.238933c0.238933 0.512 0.512 1.006933 0.802133 1.501867l0.273067 0.443733q0.4096 0.682667 0.887467 1.365333l0.273066 0.375467a33.0752 33.0752 0 0 0 2.9184 3.413333l0.1536 0.1536 1.5872 1.553067 0.273067 0.256 1.8432 1.621333q2.116267 1.706667 4.625067 3.413334l2.56 1.706666c33.467733 20.8896 109.431467 35.4816 197.802666 35.4816 119.330133 0 216.046933-26.606933 216.046934-59.409066a131.413333 131.413333 0 0 0-56.285867-102.058667z&quot;
+                fill=&quot;#323232&quot;&gt;&lt;/path&gt;
+            &lt;path
+                d=&quot;M573.8496 401.8176v-2.781867a56.200533 56.200533 0 0 0-72.6016-53.725866 82.824533 82.824533 0 0 0-134.007467 18.039466 42.530133 42.530133 0 0 0-53.009066 41.079467 104.277333 104.277333 0 0 0-42.257067 80.0768c0 26.385067 77.7728 47.786667 173.7216 47.786667s173.7216-21.384533 173.7216-47.786667a105.659733 105.659733 0 0 0-45.568-82.688z&quot;
+                fill=&quot;#CDCCCA&quot;&gt;&lt;/path&gt;
+            &lt;path
+                d=&quot;M293.768533 506.2656a104.277333 104.277333 0 0 1 42.2912-80.110933 42.530133 42.530133 0 0 1 53.009067-41.079467 82.807467 82.807467 0 0 1 134.007467-18.039467 56.32 56.32 0 0 1 43.758933 4.642134 56.2176 56.2176 0 0 0-65.518933-26.4192 82.824533 82.824533 0 0 0-134.007467 18.039466 42.530133 42.530133 0 0 0-53.009067 41.079467 104.277333 104.277333 0 0 0-42.325333 80.128c0 8.413867 7.936 16.3328 21.845333 23.210667a13.294933 13.294933 0 0 1-0.0512-1.450667z&quot;
+                fill=&quot;#E8E9EC&quot;&gt;&lt;/path&gt;
+            &lt;path
+                d=&quot;M453.4784 166.912a258.338133 258.338133 0 0 0-210.944 108.919467 183.995733 183.995733 0 1 1 0 299.451733 258.6624 258.6624 0 1 0 210.944-408.388267z&quot;
+                fill=&quot;#DDAE2A&quot;&gt;&lt;/path&gt;
+            &lt;path
+                d=&quot;M364.834133 608.9216q7.594667 0.631467 15.36 0.648533a183.995733 183.995733 0 0 0 0-367.9744q-7.748267 0-15.36 0.631467a183.995733 183.995733 0 0 1 0 366.6944z&quot;
+                fill=&quot;#EDC849&quot;&gt;&lt;/path&gt;
+            &lt;path
+                d=&quot;M794.7776 605.969067c0-1.143467 0.085333-2.286933 0.085333-3.413334a69.973333 69.973333 0 0 0-90.299733-66.833066 102.997333 102.997333 0 0 0-166.656 22.4256 52.906667 52.906667 0 0 0-65.928533 51.0976 129.706667 129.706667 0 0 0-52.599467 99.6352c0 32.8192 96.733867 59.409067 216.046933 59.409066s216.046933-26.606933 216.046934-59.409066a131.413333 131.413333 0 0 0-56.695467-102.912z&quot;
+                fill=&quot;#CDCCCA&quot;&gt;&lt;/path&gt;
+            &lt;path
+                d=&quot;M446.481067 735.914667a129.706667 129.706667 0 0 1 52.599466-99.6352 52.906667 52.906667 0 0 1 65.928534-51.080534 102.997333 102.997333 0 0 1 166.6048-22.442666 69.973333 69.973333 0 0 1 54.408533 5.7856 69.973333 69.973333 0 0 0-81.476267-32.853334 102.997333 102.997333 0 0 0-166.656 22.4256 52.906667 52.906667 0 0 0-65.928533 51.0976 129.706667 129.706667 0 0 0-52.599467 99.6352c0 10.478933 9.864533 20.309333 27.170134 28.859734a17.408 17.408 0 0 1-0.0512-1.792z&quot;
+                fill=&quot;#E8E9EC&quot;&gt;&lt;/path&gt;
+        &lt;/symbol&gt;
+    &lt;/svg&gt;
+&lt;/div&gt;
+
+/* 设置切换DarkMode函数 */
+&lt;script&gt;
+    function switchDarkMode() &#123;
+        var isDark = document.documentElement.classList.toggle(&#39;dark&#39;);
+        if (isDark) &#123;
+        localStorage.setItem(&#39;theme&#39;, &#39;dark&#39;);
+        &#125; else &#123;
+        localStorage.setItem(&#39;theme&#39;, &#39;light&#39;);
+        &#125;
+    &#125;
+&lt;/script&gt;
+
+/* 设置按钮外观 */
+&lt;style&gt;
+    #RightDownBtn &#123;
+        position: fixed;
+        right: 1.2rem;
+        bottom: 1.5rem;
+        padding: 0.3125rem 0.625rem;
+        background: #fff;
+        border-radius: 0.1875rem;
+        box-shadow: 0 0 0.3125rem rgba(0, 0, 0, .4);
+        transition: 0.3s ease all;
+        z-index: 98;
+        align-items: flex-end;
+        flex-direction: column;
+        display: -moz-flex;
+        display: flex;
+        float: right;
+        opacity: 0.8;
+        cursor: pointer;
+    &#125;
+
+    #RightDownBtn&gt;a,
+    #RightDownBtn&gt;label &#123;
+        width: 1.5em;
+        height: 1.5em;
+        margin: 0.3125rem 0;
+        transition: .2s cubic-bezier(.25, .46, .45, .94);
+    &#125;
+
+&lt;/style&gt;
+</code></pre>
+</details>
+
+<p><strong>Step 2：</strong>在<code>\themes\aomori\layout\layout.ejs</code>的<code>&lt;body></code>标签下加入如下代码：</p>
+<pre><code>/* 设置三种检测模式 */
+&lt;script&gt;
+    if (localStorage.getItem(&#39;theme&#39;) === &#39;dark&#39;) &#123;
+        document.documentElement.classList.add(&#39;dark&#39;)
+        &#125; else if (new Date().getHours() &gt;= 23 || new Date().getHours() &lt; 4) &#123;
+        document.documentElement.classList.add(&#39;dark&#39;)
+        &#125; else if (matchMedia(&#39;(prefers-color-scheme: dark)&#39;).matches) &#123;
+        document.documentElement.classList.add(&#39;dark&#39;)
+        &#125;
+&lt;/script&gt;
+</code></pre>
+<p>在同一个文件的&lt;/body&gt;下方引入：</p>
+<pre><code>&lt;%- partial(&#39;_partial/left&#39;, null, &#123;cache: !config.relative_link&#125;) %&gt;
+</code></pre>
+<p><strong>Step 3：</strong>开始为你所有需要DarkMode的class设置<code>.dark</code>分支。如：</p>
+<pre><code>:root &#123;
+    --color-white-light: #fff;
+    --color-post-main: #4c4e4d;
+&#125;
+
+.dark &#123;
+    --color-white-light: #292525; /* 板块颜色 */
+    --color-post-main: #ccc; /* 文字颜色 */
+&#125;
+
+.admonition &#123;
+    background-color: #fafafa;
+&#125;
+
+.dark .admonition &#123;
+    background-color: #4f4f4f;
+&#125;
+</code></pre>
+<p>参考：<br><a target="_blank" rel="noopener" href="http://t.csdn.cn/sBAct">hexo之Volantis添加暗黑模式</a><br><a target="_blank" rel="noopener" href="https://crosschannel.cc/daily/hexo%E6%B7%BB%E5%8A%A0%E6%9A%97%E8%89%B2%E6%A8%A1%E5%BC%8F.html">面向小白的Hexo添加暗色模式教程</a><br><a target="_blank" rel="noopener" href="http://t.csdn.cn/xLOyE">前端夜间模式（换肤）方案与实践</a></p>
+</br>
+
+<h3 id="11-增加左侧GoTop与GoBottom按钮"><a href="#11-增加左侧GoTop与GoBottom按钮" class="headerlink" title="11. 增加左侧GoTop与GoBottom按钮"></a><strong>11. 增加左侧GoTop与GoBottom按钮</strong></h3><p>一样，还是笨办法。直接在<code>\themes\aomori\layout\_partial</code>文件夹下新建两个ejs文件，分别复制如下代码：</p>
+<details>
+    <summary>GoTop：</summary>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;style&gt;
+        .goTop &#123;
+            width: 2.3rem;
+            height: 1.6rem;
+            opacity: 0.8;
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            line-height: 40px;
+            position: fixed;
+            display: block;
+            cursor: pointer;
+            bottom: 6.5rem;
+            right: 1.2rem;
+            box-shadow: 0 0 0.3125rem rgba(0, 0, 0, .4);
+            z-index: 99;
+            border-radius: 0.1875rem;
+            transition: 0.3s ease all;
+            align-items: flex-end;
+        &#125;
+
+        .dark .goTop &#123;
+        background-color: #3e3e3e;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;content&quot;&gt;
+        &lt;div class=&quot;goTop&quot; title=&quot;回到顶部&quot;&gt;&lt;ion-icon style=&quot;width:1.5em;height:1.5em;color:var(--color-post-main);&quot; name=&quot;chevron-up-outline&quot;&gt;&lt;/ion-icon&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        let goTop = document.getElementsByClassName(&#39;goTop&#39;)[0];
+        window.onscroll = function () &#123;
+            let res = document.body.scrollTop || document.documentElement.scrollTop; 
+        &#125;
+        goTop.onclick = function () &#123;
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        &#125;
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+</details>
+
+<details>
+    <summary>GoBottom：</summary>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;style&gt;
+        .goBottom &#123;
+            width: 2.3rem;
+            height: 1.6rem;
+            opacity: 0.8;
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            line-height: 40px;
+            position: fixed;
+            display: block;
+            cursor: pointer;
+            bottom: 4.5rem;
+            right: 1.2rem;
+            box-shadow: 0 0 0.3125rem rgba(0, 0, 0, .4);
+            z-index: 99;
+            border-radius: 0.1875rem;
+            transition: 0.3s ease all;
+            align-items: flex-end;
+        &#125;
+
+        .dark .goBottom &#123;
+        background-color: #3e3e3e;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;content&quot;&gt;
+        &lt;div class=&quot;goBottom&quot; title=&quot;去往底部&quot;&gt;&lt;ion-icon style=&quot;width:1.5em;height:1.5em;color:var(--color-post-main);&quot; name=&quot;chevron-down-outline&quot;&gt;&lt;/ion-icon&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        let goBottom = document.getElementsByClassName(&#39;goBottom&#39;)[0];
+        window.onscroll = function () &#123;
+            let res = document.body.scrollTop || document.documentElement.scrollTop;
+        &#125;
+        goBottom.onclick = function () &#123;
+            document.body.scrollTop = 99999;
+            document.documentElement.scrollTop = 99999;
+        &#125;
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+</details>
+
+<p>最后把两个文件都引入layout.ejs中，放在&lt;/body&gt;之下。</p>
+<pre><code>&lt;%- partial(&#39;_partial/back&#39;, null, &#123;cache: !config.relative_link&#125;) %&gt;
+&lt;%- partial(&#39;_partial/go&#39;, null, &#123;cache: !config.relative_link&#125;) %&gt;
+</code></pre>
+<p>参考：<br><a target="_blank" rel="noopener" href="http://t.csdn.cn/kVdPu">JS实现返回顶部功能</a><br><a target="_blank" rel="noopener" href="http://t.csdn.cn/RlesI">hexo（sakura）给博客增添侧边栏（回到顶部，跳转评论，深色模式，播放音乐）</a><br></br></p>
 <h2 id="未来目标与Bug记录"><a href="#未来目标与Bug记录" class="headerlink" title="未来目标与Bug记录"></a><strong>未来目标与Bug记录</strong></h2><ol>
 <li>Valine的个性化配置；</li>
-<li>夜间模式；</li>
+<li><del>夜间模式</del>；</li>
 <li>手机版的排布更人性化一些，e.g. 分类和目录放在顶部；</li>
 <li><del>左侧分享功能删除</del>；</br></li>
-<li>FunnyTitle;<br>……</br></li>
+<li>FunnyTitle;</li>
+<li>增加右侧悬浮Top&amp;Bottom按钮；<br>……</br></li>
 </ol>
 <p><strong>2023/1/22：</strong></p>
 <p>很心碎，不知道什么时候网站标题突然消失了，查看网页代码发现</p>
@@ -463,17 +745,21 @@
 <p>和demo网站对比发现那个&lt;/a&gt;前面应该是有文字的，于是去header.ejs手动添加了文字，但是不知道会不会搞坏源代码……</p>
 <p><del>转头发现评论系统不知道为什么也没了，脑子疼！！不知道问题在哪，先把昨天添加在全局config里面的valine设置删除了……</del></p>
 <p>啊啊！评论系统刷新出来了！没事了！好感动！大松一口气！</p>
-<p>标题特效也……莫名其妙地回来了……于是回去header.ejs删掉了自己改动的部分。太迷惑了……</p>
+<p>标题特效也……莫名其妙地回来了……于是回去header.ejs删掉了自己改动的部分。太迷惑了……<br></br></p>
 <p><strong>2023/1/24：</strong></p>
 <p>隐藏了左侧分享功能。完成了昨天没来得及完成的加密功能。加入了footnote插件（感谢綪咪推荐&lt;3）</p>
 <p>进一步美化（again，在綪咪的网站偷学&lt;3）：添加了运行时间/（用很笨的方法）实现了wordcount。</p>
-<p>FunnyTitle还没有搞定:(</p>
+<p>FunnyTitle还没有搞定:(<br></br></p>
 <p><strong>2023/1/25：</strong></p>
 <p>优化了手机模式下的文章题头。修改了部分模块的padding和margin。修改了文章模块透明度。将背景覆盖方式改为cover解决了手机版背景图变形的问题。</p>
-<p>搞了一天的夜间模式完全没有成功……明日再努力orz</p>
+<p>搞了一天的夜间模式完全没有成功……明日再努力orz<br></br></p>
 <p><strong>2023/1/26：</strong></p>
 <p>继续搞夜间模式。为了和背景保持一致更改了网站配色（还是）。</p>
-<p>初步实现了夜间模式切换，但电脑版的博客字体大小改变。不知道为什么无法设置只靠按钮切换，到点自动就切换了……这个还需要解决一下。</p>
+<p>初步实现了夜间模式切换，但电脑版的博客字体大小改变，且footer里面的超链接失效了。不知道为什么无法设置只靠按钮切换，到点自动就切换了……这个还需要解决一下。<br></br></p>
+<p><strong>2023/1/27：</strong></p>
+<p>夜间模式大成功！不过footer超链接仍然未能解决。去看了流浪地球2所以今天没怎么动代码。美化了行内代码外观。试图美化代码块失败了，因为没找到应该设置在哪里orz这个主题的代码高亮方式属实是不同其他。</p>
+<p>学会了文内段落的collapse，感谢綪咪提供方法！！&lt;33</p>
+<p>努力增加BackTop和GoBottom按钮中。<em><strong>两个小时的奋战后，实现了！！！！！！（欢呼）</strong></em><br></br></p>
 <hr>
 <h6><ion-icon name="image-sharp"></ion-icon> <font color="lightgray">封面图片来自Unsplash</font></h6>
 
@@ -550,6 +836,18 @@
 <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 </div>
+
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
+
                 </section>
             </section>
 
@@ -634,6 +932,8 @@
 </div>
 
 <div id="backtop"><i class="icon icon-arrow-up"></i></div>
+
+
             </aside>
             
         </div>
@@ -794,7 +1094,12 @@
                 fill="#E8E9EC"></path>
         </symbol>
     </svg>
+
 </div>
+
+
+<div id="gobottom"><ion-icon style="width:1.5em;height:1.5em;color:#ffffff;" name="chevron-down-outline"></ion-icon></div>
+
 
 <script>
     function switchDarkMode() {
@@ -806,13 +1111,17 @@
         }
       }
 
-    if (localStorage.getItem('theme') === 'dark') {
-        document.documentElement.classList.add('dark')
-        } else if (new Date().getHours() >= 21 || new Date().getHours() < 7) {
-        document.documentElement.classList.add('dark')
-        } else if (matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.classList.add('dark')
+    $("#gobottom").click(function() {
+        $("html,body").animate({scrollTop:document.body.clientHeight + 'px'}, 200);
+    });
+     $(document).scroll(function(){
+        var  scroll_top = $(document).scrollTop();
+        if(scroll_top < 800){
+            $("#gobottom").show();
+        }else{
+            $("#gobottom").hide();
         }
+    });
 </script>
 
 <style>
@@ -845,6 +1154,108 @@
 
 </style>
 
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <style>
+        .goTop {
+            width: 2.3rem;
+            height: 1.6rem;
+            opacity: 0.8;
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            line-height: 40px;
+            position: fixed;
+            display: block;
+            cursor: pointer;
+            bottom: 6.5rem;
+            right: 1.2rem;
+            box-shadow: 0 0 0.3125rem rgba(0, 0, 0, .4);
+            z-index: 99;
+            border-radius: 0.1875rem;
+            transition: 0.3s ease all;
+            align-items: flex-end;
+        }
+
+        .dark .goTop {
+        background-color: #3e3e3e;
+        }
+    </style>
+</head>
+ 
+<body>
+    <div class="content">
+        <div class="goTop" title="回到顶部"><ion-icon style="width:1.5em;height:1.5em;color:var(--color-post-main);" name="chevron-up-outline"></ion-icon></div>
+    </div>
+ 
+    <script>
+        let goTop = document.getElementsByClassName('goTop')[0];
+        window.onscroll = function () {
+            let res = document.body.scrollTop || document.documentElement.scrollTop; 
+        }
+        goTop.onclick = function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+ 
+</html>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .goBottom {
+            width: 2.3rem;
+            height: 1.6rem;
+            opacity: 0.8;
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            line-height: 40px;
+            position: fixed;
+            display: block;
+            cursor: pointer;
+            bottom: 4.5rem;
+            right: 1.2rem;
+            box-shadow: 0 0 0.3125rem rgba(0, 0, 0, .4);
+            z-index: 99;
+            border-radius: 0.1875rem;
+            transition: 0.3s ease all;
+            align-items: flex-end;
+        }
+
+        .dark .goBottom {
+        background-color: #3e3e3e;
+        }
+    </style>
+</head>
+ 
+<body>
+    <div class="content">
+        <div class="goBottom" title="去往底部"><ion-icon style="width:1.5em;height:1.5em;color:var(--color-post-main);" name="chevron-down-outline"></ion-icon></div>
+    </div>
+ 
+    <script>
+        let goBottom = document.getElementsByClassName('goBottom')[0];
+        window.onscroll = function () {
+            let res = document.body.scrollTop || document.documentElement.scrollTop;
+        }
+        goBottom.onclick = function () {
+            document.body.scrollTop = 99999;
+            document.documentElement.scrollTop = 99999;
+        }
+    </script>
+</body>
+ 
+</html>
 
 </html>
 

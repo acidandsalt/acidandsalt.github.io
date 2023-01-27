@@ -125,6 +125,15 @@
 <meta name="generator" content="Hexo 5.4.2"></head>
 
 <body>
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark')
+            } else if (new Date().getHours() >= 23 || new Date().getHours() < 4) {
+            document.documentElement.classList.add('dark')
+            } else if (matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark')
+            }
+    </script>
 
     <div class="container">
     <header class="header">
@@ -199,7 +208,7 @@
             <section class="inner">
                 <section class="inner-main">
                     <div class="post">
-    <article id="post-cldd6eeo7000zr0dy9k082cp8" class="article article-type-post" itemscope
+    <article id="post-cldeohmz30008tsdy79shcy8y" class="article article-type-post" itemscope
     itemprop="blogPost">
 
     <div class="article-inner">
@@ -248,7 +257,7 @@
 
             
                 <div class="article-symbols">
-                    <font color=lightgrey><ion-icon name="bar-chart-outline"></ion-icon>  10k 字&nbsp;&nbsp;<ion-icon name="time-outline"></ion-icon>33 mins.</font>
+                    <font color=lightgrey><ion-icon name="bar-chart-outline"></ion-icon>  14k 字&nbsp;&nbsp;<ion-icon name="time-outline"></ion-icon>11 mins.</font>
                 </div>
             
             
@@ -535,6 +544,18 @@
 <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 </div>
+
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
+
                 </section>
             </section>
 
@@ -619,6 +640,8 @@
 </div>
 
 <div id="backtop"><i class="icon icon-arrow-up"></i></div>
+
+
             </aside>
             
         </div>
@@ -779,7 +802,12 @@
                 fill="#E8E9EC"></path>
         </symbol>
     </svg>
+
 </div>
+
+
+<div id="gobottom"><ion-icon style="width:1.5em;height:1.5em;color:#ffffff;" name="chevron-down-outline"></ion-icon></div>
+
 
 <script>
     function switchDarkMode() {
@@ -791,13 +819,17 @@
         }
       }
 
-    if (localStorage.getItem('theme') === 'dark') {
-        document.documentElement.classList.add('dark')
-        } else if (new Date().getHours() >= 21 || new Date().getHours() < 7) {
-        document.documentElement.classList.add('dark')
-        } else if (matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.classList.add('dark')
+    $("#gobottom").click(function() {
+        $("html,body").animate({scrollTop:document.body.clientHeight + 'px'}, 200);
+    });
+     $(document).scroll(function(){
+        var  scroll_top = $(document).scrollTop();
+        if(scroll_top < 800){
+            $("#gobottom").show();
+        }else{
+            $("#gobottom").hide();
         }
+    });
 </script>
 
 <style>
@@ -830,6 +862,108 @@
 
 </style>
 
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <style>
+        .goTop {
+            width: 2.3rem;
+            height: 1.6rem;
+            opacity: 0.8;
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            line-height: 40px;
+            position: fixed;
+            display: block;
+            cursor: pointer;
+            bottom: 6.5rem;
+            right: 1.2rem;
+            box-shadow: 0 0 0.3125rem rgba(0, 0, 0, .4);
+            z-index: 99;
+            border-radius: 0.1875rem;
+            transition: 0.3s ease all;
+            align-items: flex-end;
+        }
+
+        .dark .goTop {
+        background-color: #3e3e3e;
+        }
+    </style>
+</head>
+ 
+<body>
+    <div class="content">
+        <div class="goTop" title="回到顶部"><ion-icon style="width:1.5em;height:1.5em;color:var(--color-post-main);" name="chevron-up-outline"></ion-icon></div>
+    </div>
+ 
+    <script>
+        let goTop = document.getElementsByClassName('goTop')[0];
+        window.onscroll = function () {
+            let res = document.body.scrollTop || document.documentElement.scrollTop; 
+        }
+        goTop.onclick = function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+ 
+</html>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .goBottom {
+            width: 2.3rem;
+            height: 1.6rem;
+            opacity: 0.8;
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            line-height: 40px;
+            position: fixed;
+            display: block;
+            cursor: pointer;
+            bottom: 4.5rem;
+            right: 1.2rem;
+            box-shadow: 0 0 0.3125rem rgba(0, 0, 0, .4);
+            z-index: 99;
+            border-radius: 0.1875rem;
+            transition: 0.3s ease all;
+            align-items: flex-end;
+        }
+
+        .dark .goBottom {
+        background-color: #3e3e3e;
+        }
+    </style>
+</head>
+ 
+<body>
+    <div class="content">
+        <div class="goBottom" title="去往底部"><ion-icon style="width:1.5em;height:1.5em;color:var(--color-post-main);" name="chevron-down-outline"></ion-icon></div>
+    </div>
+ 
+    <script>
+        let goBottom = document.getElementsByClassName('goBottom')[0];
+        window.onscroll = function () {
+            let res = document.body.scrollTop || document.documentElement.scrollTop;
+        }
+        goBottom.onclick = function () {
+            document.body.scrollTop = 99999;
+            document.documentElement.scrollTop = 99999;
+        }
+    </script>
+</body>
+ 
+</html>
 
 </html>
 

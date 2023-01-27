@@ -67,9 +67,23 @@ import { addNewClass, removeClass, throttle } from './class-module'
     })
 
     // Back to Top
-    $('#backtop').click(function () {
+    $('#backtop','#backtop2').click(function () {
         $('html, body').animate({ scrollTop: 0 }, 800)
     })
+
+    // Go to Bottom
+    $("#gobottom").click(function() {
+        $("html,body").animate({scrollTop:document.body.clientHeight + 'px'}, 200);
+    });
+     $(document).scroll(function(){
+        var  scroll_top = $(document).scrollTop();
+        if(scroll_top < 800){
+            $("#to_bottom").show();
+        }else{
+             $("#to_bottom").hide();
+        }
+    });
+
 
     // Share
     $('.share > .share-item').hover(

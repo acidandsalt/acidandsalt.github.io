@@ -451,7 +451,9 @@ menu {
 
 summary {
 	display: list-item;
-	outline: 0
+	color: #42a5f5;
+	outline: 0;
+	cursor: pointer;
 }
 
 canvas {
@@ -5797,14 +5799,14 @@ a.text-error:visited {
 
 .hljs-comment,
 .hljs-quote {
-	color: #998;
+	color: #999988;
 	font-style: italic
 }
 
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-subst {
-	color: #333;
+	color: #333333;
 	font-weight: 700
 }
 
@@ -5813,18 +5815,18 @@ a.text-error:visited {
 .hljs-tag .hljs-attr,
 .hljs-template-variable,
 .hljs-variable {
-	color: teal
+	color: #008080
 }
 
 .hljs-doctag,
 .hljs-string {
-	color: #d14
+	color: #dd1144
 }
 
 .hljs-section,
 .hljs-selector-id,
 .hljs-title {
-	color: #900;
+	color: #990000;
 	font-weight: 700
 }
 
@@ -5834,14 +5836,14 @@ a.text-error:visited {
 
 .hljs-class .hljs-title,
 .hljs-type {
-	color: #458;
+	color: #445588;
 	font-weight: 700
 }
 
 .hljs-attribute,
 .hljs-name,
 .hljs-tag {
-	color: navy;
+	color: #000080;
 	font-weight: 400
 }
 
@@ -5861,7 +5863,7 @@ a.text-error:visited {
 }
 
 .hljs-meta {
-	color: #999;
+	color: #999999;
 	font-weight: 700
 }
 
@@ -9049,9 +9051,15 @@ a.plyr__control::before {
 
 .post-inner-html p code {
 	padding: 3px 5px;
-	background: var(--color-bg);
+	background: #f4f4f9;
+	color: #3c6997;
 	font-size: 13px;
 	border-radius: 3px
+}
+
+.dark .post-inner-html p code {
+	background: #171a21;
+	color: #3c6997;
 }
 
 .post-inner-html ol,
