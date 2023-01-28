@@ -488,13 +488,6 @@ body {
 	text-rendering: optimizeLegibility
 }
 
-.dark {
-	font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-	font-size: .8rem;
-	overflow-x: hidden;
-	text-rendering: optimizeLegibility
-}
-
 a {
 	outline: 0;
 	text-decoration: none
@@ -5799,14 +5792,14 @@ a.text-error:visited {
 
 .hljs-comment,
 .hljs-quote {
-	color: #999988;
+	color: #82b569;
 	font-style: italic
 }
 
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-subst {
-	color: #333333;
+	color: #252525;
 	font-weight: 700
 }
 
@@ -5815,18 +5808,18 @@ a.text-error:visited {
 .hljs-tag .hljs-attr,
 .hljs-template-variable,
 .hljs-variable {
-	color: #008080
+	color: #00aeae
 }
 
 .hljs-doctag,
 .hljs-string {
-	color: #dd1144
+	color: #dd5811
 }
 
 .hljs-section,
 .hljs-selector-id,
 .hljs-title {
-	color: #990000;
+	color: #c63131;
 	font-weight: 700
 }
 
@@ -5843,7 +5836,7 @@ a.text-error:visited {
 .hljs-attribute,
 .hljs-name,
 .hljs-tag {
-	color: #000080;
+	color: #56afef;
 	font-weight: 400
 }
 
@@ -5854,12 +5847,12 @@ a.text-error:visited {
 
 .hljs-bullet,
 .hljs-symbol {
-	color: #990073
+	color: #be419f
 }
 
 .hljs-built_in,
 .hljs-builtin-name {
-	color: #0086b3
+	color: #788bff
 }
 
 .hljs-meta {
@@ -5911,6 +5904,39 @@ a.toc-link {
 	color: currentColor;
 	height: 100%;
 	line-height: 1.6
+}
+
+/* 新增 */
+.toc-article {
+    background: rgba(238, 238, 238, 0);
+    margin: 0 0 0 .5em;
+    padding: 1em;
+}
+
+.toc-article strong {
+    padding: .3em 0
+}
+
+.toc-article .toc-link {
+	height: 0%;
+}
+
+#toc {
+    line-height: 1.6em;
+    font-size: .8em;
+	float: right;
+}
+#toc .toc {
+    padding: 0
+}
+#toc .toc li {
+    list-style-type: none
+}
+#toc ol {
+    margin-left: 0
+}
+#toc .toc-child {
+    padding-left: 1.5em
 }
 
 .is-collapsible {
@@ -8835,6 +8861,7 @@ a.plyr__control::before {
 	margin-top: 16px;
 	margin-bottom: 16px;
 	font-size: 14.5px;
+	overflow: auto
 }
 
 .post-inner-html blockquote:first-child,
@@ -8900,6 +8927,10 @@ a.plyr__control::before {
 	max-width: 100%;
 	border: 0;
 	cursor: pointer
+}
+
+.dark .post-inner-html img {
+	filter: brightness(0.8);
 }
 
 .post-inner-html h1,
@@ -9058,8 +9089,8 @@ a.plyr__control::before {
 }
 
 .dark .post-inner-html p code {
-	background: #171a21;
-	color: #3c6997;
+	background: rgb(0 0 0 / 50%);
+	color: #66b1ff;
 }
 
 .post-inner-html ol,
@@ -9279,3 +9310,4 @@ a.plyr__control::before {
 .post-inner-html sub {
 	bottom: -.25em
 }
+
