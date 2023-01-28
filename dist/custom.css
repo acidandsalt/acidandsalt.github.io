@@ -455,7 +455,7 @@ img:not([src]):not([srcset]) {
 	max-height: calc(100vh - 190px);
 	padding: 0 20px 15px;
 	background: var(--color-white-light);
-	opacity: 0.8;
+	opacity: 0.9;
 	overflow-y: scroll
 }
 
@@ -1267,6 +1267,10 @@ img:not([src]):not([srcset]) {
 
 .footer-inner a:hover {
 	color: var(--color-white-light)
+}
+
+.dark .footer-inner a:hover {
+	color: var(--color-type)
 }
 
 .pagination {
