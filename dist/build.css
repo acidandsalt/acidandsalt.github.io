@@ -8849,13 +8849,20 @@ a.plyr__control::before {
 	-ms-text-size-adjust: 100%
 }
 
-.post-inner-html blockquote,
 .post-inner-html figure,
 .post-inner-html ol,
 .post-inner-html p,
 .post-inner-html pre,
 .post-inner-html table,
 .post-inner-html ul {
+	margin: 0;
+	padding: 0;
+	margin-top: 16px;
+	margin-bottom: 16px;
+	font-size: 14.5px;
+}
+
+.post-inner-html blockquote {
 	margin: 0;
 	padding: 0;
 	margin-top: 16px;
