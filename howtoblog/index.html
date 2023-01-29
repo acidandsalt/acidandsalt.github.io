@@ -198,7 +198,7 @@
             <section class="inner">
                 <section class="inner-main">
                     <div class="post">
-    <article id="post-cldhey4s5000pbkdy6q7l4cpw" class="article article-type-post" itemscope
+    <article id="post-cldhgqxgl0014hodyht0b3vwl" class="article article-type-post" itemscope
     itemprop="blogPost">
 
     <div class="article-inner">
@@ -247,7 +247,7 @@
 
             
                 <div class="article-symbols">
-                    <font color=lightgrey><ion-icon name="bar-chart-outline"></ion-icon>  7k 字&nbsp;&nbsp;<ion-icon name="time-outline"></ion-icon>23 mins.</font>
+                    <font color=lightgrey><ion-icon name="bar-chart-outline"></ion-icon>  7.1k 字&nbsp;&nbsp;<ion-icon name="time-outline"></ion-icon>24 mins.</font>
                 </div>
             
             
@@ -266,7 +266,7 @@
 <p>从一月十六号开始着手搭建到一月二十号终于调试基本满意，我从一个连cmd都不会用的纯种小白蜕变成一个（还是不会用cmd的）对代码稍微有了一点点认知的入门者。虽然和真正玩代码的人相比我还差得远，但能做到现在的程度已经是对以前的我的大超越了&gt;:D</p>
 <p>总之，在此记录下我个人博客搭建的历程作为纪念，也为被我拉下水的朋友们提供微薄的参考，希望你们能比我少踩几个坑🤝<br></br></p>
 <h2 id="第一天-选择与搭建"><a href="#第一天-选择与搭建" class="headerlink" title="第一天-选择与搭建"></a><strong>第一天-选择与搭建</strong></h2><p>在注意到网站的后缀是github.io之后，我搜索了“用GitHub搭建个人网站”。搭建网站不止有GitHub一种方法，对于一点儿代码也不想接触的人来说，使用<ins>Notion建站</ins>也是个简便的选择。</p>
-<p>我尝试了三种路径：（1）<a target="_blank" rel="noopener" href="http://t.csdn.cn/V63ok">使用GitHub Pages</a>；（2）<a target="_blank" rel="noopener" href="http://t.csdn.cn/hAhuP">使用Hugo博客+GitHub</a>；（3）使用Hexo博客+GitHub。前两种因为操作比较困难，我半途而废，最终采用了第三种方法。（回过头看了一眼，Hugo其实不麻烦，大概率是不熟悉流程+找的教程比较困难所以打了退堂鼓。如果有喜欢的Hugo主题用它也可以。）</p>
+<p>我尝试了三种路径：（1）<a target="_blank" rel="noopener" href="http://t.csdn.cn/V63ok">使用GitHub Pages</a>；（2）<a target="_blank" rel="noopener" href="http://t.csdn.cn/hAhuP">使用Hugo博客+GitHub</a>；（3）使用Hexo博客+GitHub。前两种因为操作比较困难，我半途而废，最终采用了第三种方法。<em>（回过头看了一眼，Hugo其实不麻烦，大概率是不熟悉流程+找的教程比较困难所以打了退堂鼓。如果有喜欢的Hugo主题用它也可以。）</em></p>
 <p>我参考的Hexo教程是：<a target="_blank" rel="noopener" href="http://t.csdn.cn/fO2aK">超详细Hexo博客搭建教程</a>，后来暮流年老师在探索时发现了更详细的教程→<a target="_blank" rel="noopener" href="http://t.csdn.cn/Vka8v">使用 Github Pages 和 Hexo 搭建自己的独立博客【超级详细的小白教程】</a>，基本把涉及的步骤和问题都写得很清楚，建议按照后一个进行。</p>
 <p><strong>个人经验建议：</strong></p>
 <ol>
@@ -277,7 +277,7 @@
 <li>GitHub页面在排版上有所改动，如果遇到与教程不一样的情况善用<code>Ctrl+F</code>，在改文件时也很好用；</li>
 <li>提前先过一遍Hexo官方文件对熟悉操作很有好处：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo官方文档（中文版）</a></li>
 <li>如果想要在发布博客时加入图片，<strong>建议将全局config文件中的<code>post_asset_folder</code>设置为<code>true</code></strong>，这样新建post时source文件夹内会同时新建同名文件夹，将图片放入同名文件夹中，deploy后网页端正常显示的概率大。（参考<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders">Hexo-资源文件夹</a>）</li>
-<li>通过页面查看源代码的方式：在想查看的地方<strong>右键-检查</strong>，页面右侧会出现一大块代码，“elements”会高亮显示代码对应的网页位置，“styles”能显示查看的位置格式由哪些源代码控制，很方便预览代码改动的效果或回到文件里改动代码。如图：</li>
+<li>通过页面查看源代码的方式：在想查看的地方<strong>右键-检查</strong>，页面右侧会出现一大块代码，“elements”会高亮显示代码对应的网页位置，“styles”能显示查看的位置格式由哪些源代码控制，很方便预览代码改动的效果或回到文件里改动代码。<em>（后来我学到这个界面按<code>Fn+F12</code>也可以调出来，学名叫网页的控制台）</em>如图：</li>
 </ol>
 <p><img src="https://cdn.jsdelivr.net/gh/acidandsalt/ohsnap/site_1/howtoblog_1(1).png" alt="howtoblog_1"></p>
 <p><strong>下载的软件汇总：</strong></p>
@@ -370,8 +370,7 @@
 <p>解决方法二：全局安装gulp<br>1.说明：全局安装gulp的目的是通过它执行gulp任务<br>2.安装：命令提示符执行npm install gulp -g<br>3.命令提示符执行gulp -v ，验证一下是否正确安装<br>出现版本号，说明问题已经解决，可以使用gulp-v、gulp less、gulp build等执行操作</p>
 </blockquote>
 <p>然而在我自己的配置过程中，单纯更改<code>base.sass</code>并<code>npm</code>没有奏效，于是我直接在<code>\aomori\source\dist\custom.css</code>文件中进行了改动。</p>
-<p>一打开<code>custom.css</code>发现这家伙是好大一坨，没关系，靠自己的眼睛加<code>Ctrl+F</code>一点点找，看久了就看出门道来了。</p>
-<p>或者也可以用<a target="_blank" rel="noopener" href="https://www.qianbo.com.cn/Tool/Beautify/Css-Formatter.html">在线代码美化网站</a>对这一坨代码进行可视化。</p>
+<p>一打开<code>custom.css</code>发现这家伙是好大一坨，没关系，先用<a target="_blank" rel="noopener" href="https://www.qianbo.com.cn/Tool/Beautify/Css-Formatter.html">在线代码美化网站</a>对这一坨代码进行可视化，然后靠自己的眼睛和无敌的<code>Ctrl+F</code>一点点找，看久了就看出门道来了。</p>
 <p>更改主题配色只需要更改文件最开头的颜色编码（如下），之后的部署步骤与上文相同。如果不确定如何更改可以先在网页上用右键-检查-styles模块更改颜色预览效果。</p>
 <pre><code>:root
     &#123;
@@ -400,10 +399,7 @@
 </code></pre>
 <p>*注：图片链接的获取方式有两种方式：</p>
 <ol>
-<li>放在博客images文件夹下，通过hexo d部署到GitHub，然后在GitHub中打开图片并复制permalink<br><img src="https://cdn.jsdelivr.net/gh/acidandsalt/ohsnap/site_1/1674317651637.png" alt="howtoblog_3"><br>将permalink复制到<a target="_blank" rel="noopener" href="https://nbviewer.org/">nbviewer</a>中，点击Go!后复制地址栏内url，即可获得图片链接。</li>
-</ol>
-<p>（参考：<a target="_blank" rel="noopener" href="https://code84.com/761121.html">hexo博客yilia主题 如何自定义个人博客的背景图片</a>）</p>
-<ol start="2">
+<li>放在博客images文件夹下，通过hexo d部署到GitHub，然后在GitHub中打开图片并复制permalink<br><img src="https://cdn.jsdelivr.net/gh/acidandsalt/ohsnap/site_1/1674317651637.png" alt="howtoblog_3"><br>将permalink复制到<a target="_blank" rel="noopener" href="https://nbviewer.org/">nbviewer</a>中，点击Go!后复制地址栏内url，即可获得图片链接。<br>（参考：<a target="_blank" rel="noopener" href="https://code84.com/761121.html">hexo博客yilia主题 如何自定义个人博客的背景图片</a>）</li>
 <li>用PicGo进行上传，详细教程见<a target="_blank" rel="noopener" href="http://t.csdn.cn/anQoN">使用github+picGo搭建图床，保姆级教程来了。</a></li>
 </ol>
 <p>用这种方式应该还可以给别的模块改背景，但我目前还没有实践。<br></br></p>
@@ -421,8 +417,8 @@
 
 <h3 id="6-斜体与字号"><a href="#6-斜体与字号" class="headerlink" title="6. 斜体与字号"></a><strong>6. 斜体与字号</strong></h3><p>测试时我发现这个博客主题不支持斜体，斜体文字实现出来是文字下加着重号的形式，对英文而言非常不便。</p>
 <p>在网页端右键-检查查看斜体字的代码信息，图一是着重号形式，图二是斜体形式，勾选掉font-style，-webkit-text-emphasis和text-emphasis之后回归了经典斜体。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/acidandsalt/ohsnap/site_1/Collage_20230122_104454.jpg"></p>
-<p>因此我简单粗暴地在<code>build.css</code>文件中将上述三个代码删除，实现了经典斜体。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/acidandsalt/ohsnap/site_1/Collage_20230122_104454.jpg" alt="none"></p>
+<p>在<code>build.css</code>文件中将上述三个代码用/* */围起来，将它变成不起作用的注释，从而实现了经典斜体。</p>
 <p>h5h6字号的实现稍微麻烦一些。作者在<code>build.css</code>中将h4h5h6设置为了同样的字号；为了不影响其他代码，可以将h5h6单独分离出来设置更小的字号。如下：</p>
 <pre><code>.h1,h1&#123;font-size:2rem&#125;
 ...
@@ -731,23 +727,23 @@
 </code></pre>
 <p>参考：<br><a target="_blank" rel="noopener" href="http://t.csdn.cn/kVdPu">JS实现返回顶部功能</a><br><a target="_blank" rel="noopener" href="http://t.csdn.cn/RlesI">hexo（sakura）给博客增添侧边栏（回到顶部，跳转评论，深色模式，播放音乐）</a><br></br></p>
 <h2 id="未来目标与Bug记录"><a href="#未来目标与Bug记录" class="headerlink" title="未来目标与Bug记录"></a><strong>未来目标与Bug记录</strong></h2><ol>
-<li>Valine的个性化配置；</li>
+<li>Valine的个性化配置；（搁置）</li>
 <li><del>夜间模式</del>；</li>
 <li><del>手机版的排布更人性化一些，e.g. 分类和目录放在顶部</del>；</li>
 <li><del>左侧分享功能删除</del>；</li>
-<li>FunnyTitle;</li>
+<li>FunnyTitle;（搁置）</li>
 <li><del>增加右侧悬浮Top&amp;Bottom按钮</del>；<br>……</br></li>
 </ol>
 <p><strong>2023/1/22：</strong></p>
-<p>很心碎，不知道什么时候网站标题突然消失了，查看网页代码发现</p>
+<p>不知道什么时候网站标题突然消失了，查看网页代码发现</p>
 <pre><code>&lt;a class=&quot;header-type-title&quot; id=typed href=&quot;/&quot;&gt;&lt;/a&gt;
 </code></pre>
-<p>和demo网站对比发现那个&lt;/a&gt;前面应该是有文字的，于是去header.ejs手动添加了文字，但是不知道会不会搞坏源代码……</p>
+<p>和demo网站对比发现那个&lt;/a&gt;前面应该是有文字的，于是去header.ejs手动添加了文字。</p>
 <p><del>转头发现评论系统不知道为什么也没了，脑子疼！！不知道问题在哪，先把昨天添加在全局config里面的valine设置删除了……</del></p>
-<p>啊啊！评论系统刷新出来了！没事了！好感动！大松一口气！</p>
-<p>标题特效也……莫名其妙地回来了……于是回去header.ejs删掉了自己改动的部分。太迷惑了……<br></br></p>
+<p>啊啊！评论系统刷新出来了！大概只是网速的问题:P 没事了！好感动！大松一口气！</p>
+<p>标题特效也莫名其妙地回来了……于是回去header.ejs删掉了自己改动的部分。<br></br></p>
 <p><strong>2023/1/24：</strong></p>
-<p>隐藏了左侧分享功能。完成了昨天没来得及完成的加密功能。加入了footnote插件（感谢綪咪推荐&lt;3）</p>
+<p>隐藏了左侧分享功能。完成了昨天没来得及完成的加密功能。加入了footnote插件hexo-reference（感谢綪咪推荐&lt;3）</p>
 <p>进一步美化（again，在綪咪的网站偷学&lt;3）：添加了运行时间/（用很笨的方法）实现了wordcount。</p>
 <p>FunnyTitle还没有搞定:(<br></br></p>
 <p><strong>2023/1/25：</strong></p>
@@ -765,7 +761,7 @@
 <p><strong>2023/1/29：</strong></p>
 <p>博客的大部分功能基本搞定了。做了一些微调，增加了文章总数统计。也陆陆续续开始搬运和经营啦。<br></br></p>
 <hr>
-<p><font color="lightgray" size=1><ion-icon name="image-sharp"></ion-icon> 封面图片来自Unsplash</font></p>
+<p><font color="lightgray" size=1><ion-icon name="image-sharp"></ion-icon> 博客背景及本文封面图片来自Unsplash</font></p>
 
         </div>
 
