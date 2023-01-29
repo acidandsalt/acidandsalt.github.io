@@ -506,8 +506,8 @@ img:not([src]):not([srcset]) {
 }
 
 .sidebar .widget .widget-wrap .widget-inner {
-	margin-bottom: 10px;
-	padding: 10px 0
+	margin-bottom: 5px;
+	padding: 5px 0
 }
 
 .sidebar .widget .widget-wrap .widget-inner ul {
