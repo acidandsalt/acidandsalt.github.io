@@ -134,8 +134,6 @@
                 
                 <a href="/archives">📚归档</a>
                 
-                <a href="/tags">🏷️标签</a>
-                
                 <a href="/about">💙关于</a>
                 
                 <a href="/friends">🌍资源</a>
@@ -164,8 +162,6 @@
                     <a href="/content">📁目录</a>
                     
                     <a href="/archives">📚归档</a>
-                    
-                    <a href="/tags">🏷️标签</a>
                     
                     <a href="/about">💙关于</a>
                     
@@ -1096,18 +1092,6 @@ class="article article-type-post"
         localStorage.setItem('theme', 'light');
         }
       }
-
-    $("#gobottom").click(function() {
-        $("html,body").animate({scrollTop:document.body.clientHeight + 'px'}, 200);
-    });
-     $(document).scroll(function(){
-        var  scroll_top = $(document).scrollTop();
-        if(scroll_top < 800){
-            $("#gobottom").show();
-        }else{
-            $("#gobottom").hide();
-        }
-    });
 </script>
 
 <style>
