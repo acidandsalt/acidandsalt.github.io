@@ -551,6 +551,13 @@ img:not([src]):not([srcset]) {
 	transition: all .2s
 }
 
+.tag-list-count {
+	color: var(--color-white);
+	vertical-align: super;
+	font-size: 1px;
+	padding: 1px;
+}
+
 .sidebar .widget .widget-tags .tag-list .tag-list-item a {
 	color: var(--color-white)
 }
@@ -1365,7 +1372,7 @@ img:not([src]):not([srcset]) {
 	padding-top: 3px;
 	padding-bottom: 15px;
 	padding-right: 18px;
-	padding-left: 18px
+	padding-left: 18Fpx
 }
 
 .friends {
