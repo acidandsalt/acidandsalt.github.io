@@ -919,7 +919,8 @@ img:not([src]):not([srcset]) {
 .post .article .article-gallery img,
 .tweet .article .article-gallery img {
 	width: 100%;
-	cursor: pointer
+	cursor: pointer;
+	padding-bottom: 10px
 }
 
 .post .article .article-gallery-active,
@@ -938,7 +939,7 @@ img:not([src]):not([srcset]) {
 .tweet .article .article-title {
 	font-size: 1rem;
 	font-weight: 500;
-	padding-top: 0px
+	padding-bottom: 10px
 }
 
 .dark {
