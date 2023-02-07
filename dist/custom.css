@@ -936,8 +936,8 @@ img:not([src]):not([srcset]) {
 
 .post .article .article-title,
 .tweet .article .article-title {
-	font-size: 1.1rem;
-	font-weight: 300;
+	font-size: 1rem;
+	font-weight: 500;
 	padding-top: 0px
 }
 
