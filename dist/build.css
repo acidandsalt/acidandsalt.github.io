@@ -9032,32 +9032,32 @@ a.plyr__control::before {
 }
 
 .post-inner-html h2 {
-	font-size: 18px;
-	line-height: 26px;
+	font-size: 20px;
+	line-height: 48px;
 	text-align: left
 }
 
 .post-inner-html h3 {
+	font-size: 18px;
+	line-height: 30px;
+	text-align: left
+}
+
+.post-inner-html h4 {
 	font-size: 16px;
 	line-height: 26px;
 	text-align: left
 }
 
-.post-inner-html h4 {
-	font-size: 14px;
-	line-height: 26px;
-	text-align: left
-}
-
 .post-inner-html h5 {
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 26px;
 	text-align: left
 }
 
 .post-inner-html h6 {
 	line-height: 26px;
-	font-size: 10px;
+	font-size: 12px;
 	text-align: left
 }
 

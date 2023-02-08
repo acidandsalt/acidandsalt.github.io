@@ -1162,7 +1162,7 @@ img:not([src]):not([srcset]) {
 .post .article .article-refer h3,
 .tweet .article .article-refer h3 {
 	color: var(--color-black);
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: 300;
 	margin-bottom: 15px
 }
