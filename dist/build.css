@@ -5923,7 +5923,6 @@ a.toc-link {
 
 #toc {
     line-height: 1.6em;
-    font-size: .8em;
 	float: right;
 }
 #toc .toc {
@@ -8846,7 +8845,8 @@ a.plyr__control::before {
 	word-wrap: break-word;
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%
+	-ms-text-size-adjust: 100%;
+	font: 15px/1.8  PingFangSC, "Microsoft Yahei", Microsoft Sans Serif, sans-serif;
 }
 
 .post-inner-html figure,
@@ -8859,7 +8859,6 @@ a.plyr__control::before {
 	padding: 0;
 	margin-top: 16px;
 	margin-bottom: 16px;
-	font-size: 14.5px;
 }
 
 .post-inner-html blockquote {
@@ -8867,8 +8866,8 @@ a.plyr__control::before {
 	padding: 0;
 	margin-top: 16px;
 	margin-bottom: 16px;
-	font-size: 14.5px;
-	overflow: auto
+	overflow: auto;
+	font: 14.5px/1.8 'Merriweather',Helvetica,Arial,sans-serif;
 }
 
 .post-inner-html blockquote:first-child,
