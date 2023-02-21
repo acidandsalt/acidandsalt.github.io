@@ -1293,7 +1293,7 @@ img:not([src]):not([srcset]) {
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	padding: 15px 0 0
+	/* padding: 15px 0 0 */
 }
 
 .pagination .page-number {
@@ -1642,7 +1642,7 @@ img:not([src]):not([srcset]) {
 	}
 
 	.archives-wrap {
-		margin-bottom: 20px
+		margin-bottom: 10px
 	}
 }
 
