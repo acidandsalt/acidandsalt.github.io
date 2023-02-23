@@ -9063,9 +9063,9 @@ a.plyr__control::before {
 
 .post-inner-html blockquote {
 	position: relative;
-	padding: 0 0 0 11px;
+	padding: 0 0 0 8px;
 	margin: 16px 0;
-	border-left: 5px solid var(--color-white)
+	border-left: 3px solid var(--color-white)
 }
 
 .post-inner-html li blockquote {
