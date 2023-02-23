@@ -390,7 +390,6 @@ img:not([src]):not([srcset]) {
 	z-index: 10;
 	-webkit-transition: all .3s;
 	transition: all .3s;
-    opacity: 0.8;
 }
 
 .sidebar .search .form-input {
@@ -459,7 +458,6 @@ img:not([src]):not([srcset]) {
 	max-height: calc(100vh - 190px);
 	padding: 0 20px 15px;
 	background: var(--color-white-light);
-	opacity: 0.9;
 	overflow-y: scroll
 }
 
