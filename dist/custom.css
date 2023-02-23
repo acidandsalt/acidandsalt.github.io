@@ -40,7 +40,7 @@
 }
 
 body {
-	background-image: url('https://cdn.jsdelivr.net/gh/acidandsalt/ohsnap/site_1/a1.jpg');
+	background-image: url('https://cdn.jsdelivr.net/gh/acidandsalt/ohsnap/site_1/newbg.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
@@ -1265,8 +1265,8 @@ img:not([src]):not([srcset]) {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0 20px 20px;
-	color: var(--color-type);
-	opacity: 0.7;
+	color: var(--color-white-light);
+	opacity: 0.8;
 	line-height: 22px;
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -1274,18 +1274,27 @@ img:not([src]):not([srcset]) {
 	user-select: none;
 }
 
+.dark .footer-inner {
+	color: var(--color-white);
+	opacity: 0.5;
+}
+
 .footer-inner a {
-	color: var(--color-type);
-	opacity: 0.7;
+	color: var(--color-white-light);
+	opacity: 0.8;
 	text-decoration: underline;
 }
 
+.dark .footer-inner a {
+	color: var(--color-type);
+}
+
 .footer-inner a:hover {
-	color: var(--color-white-light)
+	color: var(--color-white)
 }
 
 .dark .footer-inner a:hover {
-	color: var(--color-type)
+	color: var(--color-white)
 }
 
 .pagination {
