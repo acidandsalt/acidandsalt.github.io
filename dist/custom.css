@@ -17,7 +17,7 @@
 
 :root {
 	--color-light: #42a5f5;
-	--color-main: #507dbc;
+	--color-main: #001f54;
 	--color-white: #ccc;
 	--color-white-light: #fff;
 	--color-black: #292525;
@@ -29,7 +29,7 @@
 
 .dark {
     --color-light: #42a5f5;
-	--color-main: #507dbc;
+	--color-main: #edf2fb;
 	--color-white: #ccc;
 	--color-white-light: #292525; /* 板块颜色 */
 	--color-black: #292525;
