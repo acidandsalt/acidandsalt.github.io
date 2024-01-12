@@ -11,8 +11,8 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
 @font-face {
-	font-family: 'Merriweather';
-	src: url('\my\Merriweather-Regular.ttf');
+	font-family: 'Roboto';
+	src: url('\my\Roboto-Regular.ttf');
 }
 
 :root {
@@ -52,7 +52,7 @@ body {
 }
 
 .dark body {
-    background-image: url('https://cdn.jsdelivr.net/gh/acidandsalt/ohsnap/site_1/a2.jpg');
+    background-image: url('https://cdn.jsdelivr.net/gh/acidandsalt/ohsnap/site_1/5305.jpg');
 }
 
 a {
@@ -906,7 +906,7 @@ img:not([src]):not([srcset]) {
 .post .article,
 .tweet .article {
 	background: var(--color-white-light);
-	opacity: 0.85;
+	opacity: 0.9;
 	border-radius: 8px;
 	margin-bottom: 20px;
 	padding: 15px;
