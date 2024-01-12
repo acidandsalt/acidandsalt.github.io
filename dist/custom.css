@@ -545,10 +545,10 @@ img:not([src]):not([srcset]) {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	display: inline-block;
-	line-height: 24px;
+	line-height: 20px;
 	margin-bottom: 8px;
-	margin-right: 6px;
-	padding: 0 5px;
+	margin-right: 4px;
+	padding: 0 4px;
 	-webkit-transition: all .2s;
 	transition: all .2s
 }
