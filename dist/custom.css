@@ -18,7 +18,7 @@
 :root {
 	--color-light: #42a5f5;
 	--color-main: #001f54;
-	--color-white: #ccc;
+	--color-white: #adb5bd;
 	--color-white-light: #fff;
 	--color-black: #292525;
 	--color-type: #33415c;
@@ -546,10 +546,9 @@ img:not([src]):not([srcset]) {
 	box-sizing: border-box;
 	display: inline-block;
 	line-height: 24px;
-	margin-bottom: 10px;
-	margin-right: 10px;
-	padding: 0 8px;
-	padding-right: 5px;
+	margin-bottom: 8px;
+	margin-right: 6px;
+	padding: 0 5px;
 	-webkit-transition: all .2s;
 	transition: all .2s
 }
@@ -1335,7 +1334,7 @@ img:not([src]):not([srcset]) {
 
 .comments {
 	background: var(--color-white-light);
-	opacity: 0.8;
+	opacity: 0.9;
 	border-radius: 8px;
 	padding: 20px;
 	position: relative
@@ -1381,7 +1380,7 @@ img:not([src]):not([srcset]) {
 
 .page .article {
 	background: var(--color-white-light);
-	opacity: 0.8;
+	opacity: 0.85;
 	border-radius: 8px;
 	margin-bottom: 15px;
 	padding-top: 3px;
